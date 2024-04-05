@@ -8,9 +8,9 @@ See online documentation for working with this repository at: https://ioos.githu
 
 _Delete the 'ioos-documentation-jekyll-skeleton' heading above, delete this comment and the remaining text above, modify the reamaining README content below to be relevant to your documentation site, and make sure to change the Jekyll site configuration files accoridng to the instructions in the HOWTO/documentation. Once your site content looks ready to go, it can be pushed to the [IOOS GitHub Organization](https://github.com/ioos) to be deployed_
 
-# IOOS Documentation Site: ___________
+# IOOS Documentation Site: HFRNet
 
-**Site URL:** https://ioos.github.io/your-documentation-repo-name
+**Site URL:** https://ioos.github.io/hfrnet
 
 
 
@@ -22,15 +22,15 @@ Requirements:
 
 Clone this repository:
 ```commandline
-git clone https://github.com/ioos/ioos-documentation-jekyll-skeleton.git
+git clone https://github.com/ioos/hfrnet.git
 ```
-Rename the resulting `ioos-documentation-jekyll-skeleton` directory to a name of your choice, and follow further [Getting Started](https://ioos.github.io/ioos-documentation-jekyll-skeleton/howto.html#getting-started) section in the HOWTO documentation.
+Follow [Getting Started](https://ioos.github.io/ioos-documentation-jekyll-skeleton/howto.html#getting-started) section in the HOWTO documentation.
 
 To build the site, in your local renamed repo directory, run:
 ```commandline
 bundle exec jekyll serve --config _config.yml --watch --verbose --incremental
 ```
-This will deploy a website at: http://127.0.0.1:4000/ioos-documentation-jekyll-skeleton/.
+This will deploy a website at: http://127.0.0.1:4000/hfrnet/.
 
 Further instructions for modifying and configuring your site can be found in the  [Editing and configuring your documentation site](https://ioos.github.io/ioos-documentation-jekyll-skeleton/howto.html#editing-and-configuring-your-documentation-site) section of the HOWTO.
 
@@ -46,6 +46,6 @@ Then build the site again.
 ```commandline
 bundle exec jekyll serve --config _config.yml --watch --verbose --incremental
 ```
-And review at http://127.0.0.1:4000/ioos-documentation-jekyll-skeleton/
+And review at http://127.0.0.1:4000/hfrnet/
 
 More settings changes, including renaming the site URL to match your new repository name (replacing 'ioos-documentation-jekyll-skeleton', should be made by editing the `_config.yml` and `_config_dev.yml` files in the repository root. See the [Edit Your Site Content](https://ioos.github.io/ioos-documentation-jekyll-skeleton/howto.html#step-2-edit-your-documentation-site-content) section of the the HOWTO.
