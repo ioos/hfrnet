@@ -1,43 +1,148 @@
 ---
-title: "IOOS Jekyll Documentation Theme Homepage"
-keywords: homepage
-tags: [getting_started, about, overview]
-toc: false
-#permalink: index.html
-summary: This is a placeholder markdown document that will render as the index.html page for the documentation site.  Replace content as desired.
+# Feel free to add content and custom Front Matter to this file.
+# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+
+title: HFRNet System Documentation
+layout: home
 ---
+## Start Here
 
-## HOWTO: IOOS Jekyll Documentation Theme
+1. [Context](./01-context)
+2. [Functional Overview](./02-functional-overview)
+3. [Quality Attributes](03-quality-attributes)
+4. [Constraints](04-constraints)
+5. [Principles](05-principles)
+6. [Software Architecture](06-software-architecture)
+7. [Code](07-code)
+8. [Data](08-data)
+9. [Infrastructure Architecture](09-infrastructure-architecture)
+10. [Deployment](10-deployment)
+11. [Operation and Support](11-operation-support)
+12. [Development Environment](12-development-environment) 
+13. [Decision Log](13-decision-log)
 
-Instructions on using this theme can be found in the [HOWTO - IOOS Jekyll Documentation Theme](./howto.html) page.
+## HFRNet Users and Requirements
+
+See [users](./users)
 
 
-## Header 1
+## Future (to-be) HFRNet
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum porta iaculis. Vestibulum semper scelerisque nunc, ac sagittis quam ornare eget. Sed massa dui, vehicula at magna non, semper porttitor dolor. Pellentesque eget augue purus. Cras quis urna iaculis, aliquam urna non, malesuada velit. Suspendisse arcu diam, fringilla in ex fringilla, ultrices pharetra orci. Phasellus leo sapien, elementum vitae tempus in, aliquet vitae leo. Cras eros urna, suscipit tincidunt mi id, dignissim eleifend ante. Etiam ullamcorper dui auctor leo dapibus, at varius lorem mattis. Morbi maximus velit id nisi luctus commodo. Mauris ut bibendum urna, vel lobortis felis. Duis convallis mauris quis finibus dignissim.
+[HFRNet v2.0 at NOAA](./hfrnetv2p0)
 
-Fusce interdum et ex eget maximus. Nam rhoncus elementum facilisis. Curabitur sagittis facilisis lectus, in viverra urna fermentum id. Praesent eget est libero. Praesent accumsan sed ex id finibus. In sed augue non tortor porta tristique vitae elementum sapien. Duis enim sapien, varius non nulla sit amet, mattis pharetra tellus. Ut volutpat placerat risus vitae faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
 
-## Header 2
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum porta iaculis. Vestibulum semper scelerisque nunc, ac sagittis quam ornare eget. Sed massa dui, vehicula at magna non, semper porttitor dolor. Pellentesque eget augue purus. Cras quis urna iaculis, aliquam urna non, malesuada velit. Suspendisse arcu diam, fringilla in ex fringilla, ultrices pharetra orci. Phasellus leo sapien, elementum vitae tempus in, aliquet vitae leo. Cras eros urna, suscipit tincidunt mi id, dignissim eleifend ante. Etiam ullamcorper dui auctor leo dapibus, at varius lorem mattis. Morbi maximus velit id nisi luctus commodo. Mauris ut bibendum urna, vel lobortis felis. Duis convallis mauris quis finibus dignissim.
+### Portal
 
-Fusce interdum et ex eget maximus. Nam rhoncus elementum facilisis. Curabitur sagittis facilisis lectus, in viverra urna fermentum id. Praesent eget est libero. Praesent accumsan sed ex id finibus. In sed augue non tortor porta tristique vitae elementum sapien. Duis enim sapien, varius non nulla sit amet, mattis pharetra tellus. Ut volutpat placerat risus vitae faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+Current Assumptions:
 
-### Sub-header 1
+- Portals will operate through the end of the SIO period of performance (2025-MM-DD).
+- Current portal operators may be willing to extend their portal operations beyond the end of the SIO period of performance.
+- NDBC will be willing to operate their Node for the duration of the migration project and will serve as a testing capability.  
+- We do not need 6d Portals, and can scale back to few (3?) during the transition.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum porta iaculis. Vestibulum semper scelerisque nunc, ac sagittis quam ornare eget. Sed massa dui, vehicula at magna non, semper porttitor dolor. Pellentesque eget augue purus. Cras quis urna iaculis, aliquam urna non, malesuada velit. Suspendisse arcu diam, fringilla in ex fringilla, ultrices pharetra orci. Phasellus leo sapien, elementum vitae tempus in, aliquet vitae leo. Cras eros urna, suscipit tincidunt mi id, dignissim eleifend ante. Etiam ullamcorper dui auctor leo dapibus, at varius lorem mattis. Morbi maximus velit id nisi luctus commodo. Mauris ut bibendum urna, vel lobortis felis. Duis convallis mauris quis finibus dignissim.
+If true, we do not need to integrate the portal migration plans into the NCCF Node development plan immediately.  
 
-Fusce interdum et ex eget maximus. Nam rhoncus elementum facilisis. Curabitur sagittis facilisis lectus, in viverra urna fermentum id. Praesent eget est libero. Praesent accumsan sed ex id finibus. In sed augue non tortor porta tristique vitae elementum sapien. Duis enim sapien, varius non nulla sit amet, mattis pharetra tellus. Ut volutpat placerat risus vitae faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+TODO:
 
-### Sub-header 2
+- [ ] Verify portal operator willingness to extend operations (document this)
+- [ ] Establish agreement between NCCF and Portal operators to exchange configuration information.
+- [ ] Verify that NDBC can update their Portal harvesting to new Portal operators if we scale back.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum porta iaculis. Vestibulum semper scelerisque nunc, ac sagittis quam ornare eget. Sed massa dui, vehicula at magna non, semper porttitor dolor. Pellentesque eget augue purus. Cras quis urna iaculis, aliquam urna non, malesuada velit. Suspendisse arcu diam, fringilla in ex fringilla, ultrices pharetra orci. Phasellus leo sapien, elementum vitae tempus in, aliquet vitae leo. Cras eros urna, suscipit tincidunt mi id, dignissim eleifend ante. Etiam ullamcorper dui auctor leo dapibus, at varius lorem mattis. Morbi maximus velit id nisi luctus commodo. Mauris ut bibendum urna, vel lobortis felis. Duis convallis mauris quis finibus dignissim.
+### HFFRNet Website
 
-Fusce interdum et ex eget maximus. Nam rhoncus elementum facilisis. Curabitur sagittis facilisis lectus, in viverra urna fermentum id. Praesent eget est libero. Praesent accumsan sed ex id finibus. In sed augue non tortor porta tristique vitae elementum sapien. Duis enim sapien, varius non nulla sit amet, mattis pharetra tellus. Ut volutpat placerat risus vitae faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+Where can the [hfrnet website](https://hfrnet.ucsd.edu/), or some subset of it, be deployed?
 
-## Header 3
+The site contains numerous diagnostics useful to HFR operators, and includes the "NOAA metric" aka the GPRA metric IOOS uses to report progress.  These are requirements for the new site.  The leading candidate for the new site hosting is [hfr on ioos.us](https://hfrnet.ioos.us/).
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum porta iaculis. Vestibulum semper scelerisque nunc, ac sagittis quam ornare eget. Sed massa dui, vehicula at magna non, semper porttitor dolor. Pellentesque eget augue purus. Cras quis urna iaculis, aliquam urna non, malesuada velit. Suspendisse arcu diam, fringilla in ex fringilla, ultrices pharetra orci. Phasellus leo sapien, elementum vitae tempus in, aliquet vitae leo. Cras eros urna, suscipit tincidunt mi id, dignissim eleifend ante. Etiam ullamcorper dui auctor leo dapibus, at varius lorem mattis. Morbi maximus velit id nisi luctus commodo. Mauris ut bibendum urna, vel lobortis felis. Duis convallis mauris quis finibus dignissim.
+Open questions:
 
-Fusce interdum et ex eget maximus. Nam rhoncus elementum facilisis. Curabitur sagittis facilisis lectus, in viverra urna fermentum id. Praesent eget est libero. Praesent accumsan sed ex id finibus. In sed augue non tortor porta tristique vitae elementum sapien. Duis enim sapien, varius non nulla sit amet, mattis pharetra tellus. Ut volutpat placerat risus vitae faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+- Where is the data that underlies the [plots](https://hfrnet.ucsd.edu/diagnostics/#) generated?  Does the new site require access to the NCCF Node or the Portals or can it be recreated by data output by the Node?  
+- What is the format of the data displayed by the diagnostics?
+- If concessions need to be made, what are the essential metrics/diagnostics?  What can be cut?
+
+### System / Node Monitor
+
+In the diagrams this is a generic function that processes data files created by the Node into something that can be read into the HFRNet web site.  
+
+- What language is this processing function written in?  
+- Does it require access to the MySQL RDBMS run on the node?
+- Does the website access the database directly?  Or through files generated by the System Monitor?
+- Does the system monitor access the Portal directly?  Or does it calculate metrics based on the files that are rsynced to the Node?
+- How does the RPS maintained radial ERDDAP access the SIO Node and/or System Monitor?
+
+### SIO THREDDS
+
+- Does the TDS integrate tightly with the HFRNet website?
+- Are the data files that feed the TDS, copies of the Node output?  Or does TDS point to the primary output?
+- Is ncWMS enabled?  Do they know if anyone uses it?
+- Where is the SIO image service hosted?  Do we have any documentation on that?  Ask Mark/Joe.
+
+### NDBC THREDDS
+
+- How different is this TDS from the SIO TDS?
+- Document the process for pulling data from NDBC TDS into data tanks.  What will change in new system?
+-
+
+### NDBC Postprocess
+
+This is a generic container to capture all of the processing NDBC does based on code that is separate from the Node code written by SIO/CORDC.  At the very least it includes code to:
+
+- Populate and configure NDBC THREDDS
+- Reformat RTV netCDF into Grib for AWIPS/GTS and push to NWSTG
+- Create monthly Archive packages
+
+TODO:
+
+- [ ] ==All operational dissemination pathways are going to need to be reviewed and evaluated to determine suitability of PDA or NDBC as the long term provider.==
+
+### NESDIS PDA
+
+What exactly gets disseminated from here, and how is it different from the existing NDBC pathway?  What is the most efficient and easiest to a) maintain, b) adapt in the future, c) migrate quickly?
+
+# Questions from Micah to be filed in the doc
+
+- What dissemination options does NCCF expect to support following the native AWS cloud dissemination approval they're waiting on the OCIO for? (S3, HTTPS, higher-level data access services like ERDDAP/THREDDS).  I believe Melissa answered they were working w/NCEI on prototyping higher-level services within NCCF, so we should get more info on that: which services, what timeframe? I don't have a clear understanding of what we can expect will be supported and when.  
+- How likely is that to happen prior to 6/30/25 and if so will we be able to take advantage of it right away?  Or do we need to plan on designing a dissemination solution with our partners based on the PDA (or other TBD) system regardless?  There are some notes and comments about this topic in our tag up notes from last week.
+  - Follow-on questions based on the above:
+  - How do NDBC and NCEP work with accessing data via the PDA system?  I think Brian already reached out to NDBC about this.
+  - Do we need to fund RPS for any data dissemination-related support - in addition to transitioning and operating the existing HFR website - prior to FY25 funding cycle (ie with FY24 funds)?
+  - What of NCEI's capabilities and proposal might we need to fund similarly in support of HFR product dissemination?  If we don't fund anything from the original proposal to start with, how would the existing HFR archiving workflow that pulls from NDBC per current HFR data flow diagram need to be updated to accommodate NCCF (hopefully minimally) and does this require our funding NCEI to do so?
+
+# Milestone Planning / High Level Roadmap
+
+1. Verify assumptions and gain participation for all partners
+    1. Existing Portal operators
+    1. NDBC
+    1. NCEI
+    1. NCCF
+1. Node functionality established in NCCF
+    1. Matlab code translated to Python
+    1. RTV tested against NDBC processed data
+1. Dissemination
+    1. Design/test new dissemination pathway to NWSTG (PDA or NDBC?)
+    1. Design/test new dissemination pathway to NCEP Data Tanks
+    1. Design/test new dissemination pathway to EDS/SAROPS
+    1. Design/test new dissemination pathway to Radials ERDDAP
+    1. Design/test new dissemination pathway to OceansMap
+    1. Design/test new dissemination pathway to Regional Association websites and data systems (esp. visualization services)
+1. HFRNet website migration
+    1. Technical requirements documented
+    1. Host determined
+    1. Website designed and tested against existing NDBC Node and existing Portal
+    1. Website designed and tested against NCCF Node
+    1. Integrate "National Radar Map" into IOOS OceansMap, retire bespoke HFR visualization portal
+1. Initial capability for Waves demonstrated
+1. Updated and integrated new features
+    1. ARCO integrated data set published
+    1. ARCO integrated historical database published (all available RTV for entire observationsl record)
+    1. Integration with NCEI/GOCD
+    1. Cloud based ingest system designed and tested as Portal replacement.
+1. Periodic operational upgrades
+    1. NCCF switches to using new cloud based portal ingest function
+    1. Upgrade NCCF processing to include Waves
+    1. Create aggregated data set for RTV time series (full observational record)
+    1. Create aggregated data set for radials time series (full observational record)
+1. Retire legacy systems
+    1. Retire SIO Node
+    1. Retire University hosted Portals

@@ -2,9 +2,9 @@ output: web
 # this property is useful for conditional filtering of content that is separate from the PDF.
 
 ##### IOOS edit: replace this field with the documentation site name to appear on the top navigation bar next to the home button #####
-topnav_title: Insert Your Documentation Site Name
+topnav_title: HFRNet System Description
 
-site_title: IOOS GitHub Documentation
+site_title: IOOS HFRNet
 # this appears in the html browser tab for the site title (seen mostly by search engines, not users)
 
 company_name: US IOOS
@@ -36,7 +36,7 @@ exclude:
 
 
 ##### IOOS edit: replace this field with the documentation site name to be included in feedback email subject line #####
-feedback_subject_line: Insert Your Documentation Site Name
+feedback_subject_line: HFRNet System Description
 
 ##### IOOS edit: replace this field with the contact email to submit to via the feedback link #####
 feedback_email: data.ioos@noaa.gov
@@ -140,13 +140,13 @@ description: "A Jekyll-based documentation theme for data management documentati
 url                      : "https://ioos.github.io"
 
 #baseurl                  : "/your-documentation-repo-name"
-baseurl                  : "/ioos-documentation-jekyll-skeleton"
+baseurl                  : "/hfrnet"
 
 #repository               : "ioos/your-documentation-repo-name"
-repository               : "ioos/ioos-documentation-jekyll-skeleton"
+repository               : "ioos/hfrnet"
 
 #github_editme_path       : "ioos/your-documentation-repo-name/blob/gh-pages/_docs"
-github_editme_path       : "ioos/ioos-documentation-jekyll-skeleton/blob/gh-pages/_docs"
+github_editme_path       : "ioos/hfrnet/blob/gh-pages/_docs"
 
 
 #Setup/config for 'ioos_documentation_theme_jekyll' git submodule (do not alter):
