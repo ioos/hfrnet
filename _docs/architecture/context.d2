@@ -1,0 +1,37 @@
+# High level context diagram for HFRNet v2.0
+#
+
+...@classes
+
+title: HFRNet System Context {
+  shape: text
+  near: top-center
+  style: {
+    font-size: 55
+    italic: true
+  }
+}
+
+sites: "National Network of Sites (ca. 160)" {
+  grid-columns: 3
+  site1: HFR Site {
+    shape: image
+    icon: ./icons/antenna-svgrepo-com.svg
+  }
+  site2: HFR Site {
+    shape: image
+    icon: ./icons/antenna-svgrepo-com.svg
+  }
+  siteN: HFR Site {
+    shape: image
+    icon: ./icons/antenna-svgrepo-com.svg
+  }
+}
+
+
+sites -> hfrnet -> users
+users.link: layers.users
+
+layers: {
+  users: @users
+}

@@ -1,0 +1,127 @@
+
+...@classes
+
+title: HFRNet Data Flow {
+  shape: text
+  near: top-center
+  style: {
+    font-size: 55
+    italic: true
+  }
+}
+
+sites: "" {
+  grid-columns: 3
+  near: top-center
+  site1: HFR Site {
+    shape: image
+    icon: ./icons/antenna-svgrepo-com.svg
+  }
+  site2: HFR Site {
+    shape: image
+    icon: ./icons/antenna-svgrepo-com.svg
+  }
+  siteN: HFR Site {
+    shape: image
+    icon: ./icons/antenna-svgrepo-com.svg
+  }
+}
+
+agg: "Aggregation Portals x3" {
+  class: question
+  style: {
+    multiple: true
+  }
+  ingest
+  process
+  rtdb: "Real Time DB \n [MySQL]" {
+    shape: cylinder
+  }
+  dir: |shell
+    /agg/data/site
+  |
+
+  ingest -> process
+  process -> dir
+  process -> rtdb
+}
+sites -> agg.ingest
+
+nccf: NCCF Hosted {
+  ingest: Secure Ingest
+  calc: RTV and Wave Processing
+  egress: "Egress \n PDA or S3?" {
+    style: {
+      stroke: red
+    }
+  }
+
+  ingest -> calc: Radial ASCII files
+  calc -> egress: Radial, wave, RTV netCDF
+}
+nccf.ingest -> agg.dir: "rsync radials"
+nccf.ingest -> agg.rtdb: "Mirror DB?" {
+  style: {
+    stroke: red
+  }
+}
+
+ndbc: NDBC Hosted {
+  ingest: "Ingest \n [Python]"
+  tds: THREDDS Data Server
+  ftp: SFTP
+  archiver: Archive Packger
+  ingest -> tds: Update
+  ingest -> ftp: Update
+  ingest -> archiver: Create package
+}
+
+ndbc.ingest -> nccf.egress: Pull from S3 or PDA ??? {
+  style: {
+    stroke: red
+  }
+}
+
+rps: RPS Hosted {
+  ingest: "Ingest \n [Lambda / S3]"
+  web: "hfradar.ioos.us website"
+  erddap: "Radials ERDDAP"
+  data_lake: "Data Lake" {
+    style: {
+      stroke: "red" #
+    }
+  }
+  ingest -> web
+  ingest -> erddap
+  ingest -> data_lake
+}
+
+ndbc.tds <- Data Tanks: "[wget]"
+ndbc.ftp -> NWSTG: "[Grib ftpsin 42]????"
+
+ndbc.archiver -> NCEI: Push monthly archive {
+  style: {
+    stroke: red
+  }
+}
+
+# What about the configuration of sites from web site
+rps.ingest -> agg.dir: "Radials" {
+  style: {
+    stroke: red
+  }
+}
+rps.web <-> agg.rtdb: "Query/Update site configuration" {
+  style: {
+    stroke: red
+  }
+}
+rps.ingest -> ndbc.tds: "RTV/Waves?" {
+  style: {
+    stroke: red
+  }
+}
+model: Non-NOAA Modelers
+users: Users
+users -> rps.data_lake: XArray, XREDS, XPublish
+model -> rps.erddap
