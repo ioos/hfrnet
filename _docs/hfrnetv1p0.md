@@ -5,14 +5,15 @@ layout: page
 
 These diagrams show the current HFRNet "as-is" system.  
 
-# System Context
+## System Landscape View
 
-![System Context](images/structurizr-1-HFRNetV1p0SystemContext.svg)
+Detailed overview of the entire data flow in teh current system.
+
+Include PPTX slide here.
 
 
-# Container View
+## Portal Structure
 
-![Container View](images/structurizr-1-HFRNetV1p0ContainerView.svg)
-![Container View Key](images/structurizr-1-HFRNetV1p0ContainerView-key.svg)
-Download images: [png](images/structurizr-1-HFRNetV1p0ContainerView.png) | [svg](images/structurizr-1-HFRNetV1p0ContainerView.svg)
+
+## Node Structure
 
