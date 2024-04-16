@@ -1,6 +1,6 @@
 ---
 title: HFRNet Version 2.0 - NOAA Implementation
-layout: home
+layout: page
 ---
 
 # System Context

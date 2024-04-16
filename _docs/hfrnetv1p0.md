@@ -1,6 +1,6 @@
 ---
 title: HFRNet Version 1.0 - SIO/NDBC Implementation
-layout: home
+layout: page
 ---
 
 These diagrams show the current HFRNet "as-is" system.  

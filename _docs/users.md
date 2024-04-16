@@ -1,6 +1,6 @@
 ---
 title: HFRNet Users
-layout: home
+layout: page
 ---
 
 For each user below, document their needs by answering the following questions:

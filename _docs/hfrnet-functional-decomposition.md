@@ -1,6 +1,6 @@
 ---
 title: HFRNet Functions
-layout: home
+layout: page
 ---
 
 
