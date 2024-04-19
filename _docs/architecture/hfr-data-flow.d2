@@ -1,4 +1,3 @@
-
 ...@classes
 
 title: HFRNet Data Flow {
@@ -9,10 +8,11 @@ title: HFRNet Data Flow {
     italic: true
   }
 }
+direction:down
+
 
 sites: "" {
-  grid-columns: 3
-  near: top-center
+  grid-columns: 1
   site1: HFR Site {
     shape: image
     icon: ./icons/antenna-svgrepo-com.svg
@@ -96,14 +96,7 @@ rps: RPS Hosted {
   ingest -> data_lake
 }
 
-ndbc.tds <- Data Tanks: "[wget]"
-ndbc.ftp -> NWSTG: "[Grib ftpsin 42]????"
 
-ndbc.archiver -> NCEI: Push monthly archive {
-  style: {
-    stroke: red
-  }
-}
 
 # What about the configuration of sites from web site
 rps.ingest -> agg.dir: "Radials" {
@@ -121,7 +114,26 @@ rps.ingest -> ndbc.tds: "RTV/Waves?" {
     stroke: red
   }
 }
-model: Non-NOAA Modelers
-users: Users
-users -> rps.data_lake: XArray, XREDS, XPublish
-model -> rps.erddap
+
+users: "Users or Dissemination Systems" {
+  grid-columns: 3
+  
+  model: "Non-NOAA Modelers"
+  gis: "Websites/Maps (OGC)"
+  data_tanks: "NCEP Data Tanks"
+  nwstg: "NWSTG"
+  developers: "Product Developers"
+  ncei: "NCEI Archive"
+}
+
+ndbc.tds <- users.data_tanks: "wget"
+ndbc.ftp -> users.nwstg: "Grib via ftpsin 42"
+
+users.developers -> rps.data_lake: XArray, XPublish
+users.model -> rps.erddap: "netCDF"
+
+ndbc.archiver -> users.ncei: Push monthly archive {
+  style: {
+    stroke: red
+  }
+}

@@ -9,8 +9,13 @@ layout: page
 ---
 
 
+## Current HFRNet v1.0 System Documentation
 
-## HFNRet System Description
+Diagrams and descriptions for the current operational system that is hosted by SIO/CORDC.
+
+[HFRNet v 1.0](./hfrnetv1p0)
+
+## Future HFNRet v2.0 System Documentation
 
 1. [Context](./01-context)
 2. [Functional Overview](./02-functional-overview)
@@ -32,9 +37,3 @@ See [users](./users)
 See [functions](./hfrnet-functional-decomposition)
 
 ## HFRNet Transition Project Details
-
-## Current HFRNet System Documentation
-
-Diagrams and descriptions for the current operational system that is hosted by SIO/CORDC.
-
-[HFRNet v 1.0](./hfrnetv1p0)

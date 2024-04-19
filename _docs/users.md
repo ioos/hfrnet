@@ -27,3 +27,12 @@ For each user below, document their needs by answering the following questions:
 - CO-OPS PORTS (Confirm data flow and reliability requirements.  POC is Chris Deveglio or his delegate.)
 - GNOME/GOODS (How does ORR access?  POC is probably Chris Barker or Amy MacFayden)
 - Doppio model run by Rutgers/MARACOOS ([A data-assimilative model reanalysis of the U.S. Mid Atlantic Bight and Gulf of Maine: Configuration and comparison to observations and global ocean models](https://www.sciencedirect.com/science/article/pii/S0079661122001781))
+
+<div class="callout callout-info" markdown="span">
+This is a callout. It can be used to make an aside without disrupting the flow of the main document.
+</div>
+
+<div class="primer-spec-callout [variant]" markdown="1">
+  This is an example note box.
+  If you use this in a `markdown` file, *markdown* works inside the box too!
+</div>
