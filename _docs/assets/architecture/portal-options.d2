@@ -1,0 +1,146 @@
+...@classes
+
+title: Options for new portal design {
+  shape: text
+  near: bottom-left
+  style: {
+    font-size: 55
+    italic: true
+  }
+}
+
+sites: "" {
+  grid-columns: 3
+  label: Sites (~165)
+  near: top-center
+  site1: HFR Site {
+    shape: image
+    icon: ./icons/antenna-svgrepo-com.svg
+  }
+  site2: HFR Site {
+    shape: image
+    icon: ./icons/antenna-svgrepo-com.svg
+  }
+  siteN: HFR Site {
+    shape: image
+    icon: ./icons/antenna-svgrepo-com.svg
+  }
+}
+
+agg: "Aggregation Portals x3" {
+  style: {
+    multiple: true
+  }
+  ingest
+  process
+  rtdb: "Real Time DB \n [MySQL]" {
+    shape: cylinder
+  }
+  dir: |shell
+    /agg/data/site
+  |
+
+  ingest -> process
+  process -> dir
+  process -> rtdb
+}
+sites -> agg.ingest
+
+nccf: NCCF Hosted {
+  near: bottom-center
+  ingest: Secure Ingest
+  calc: RTV and Wave Processing
+  egress: "Egress \n PDA or S3?" {
+    style: {
+      stroke: red
+    }
+  }
+
+  ingest -> calc: Radial ASCII files
+  calc -> egress: Radial, wave, RTV netCDF
+}
+nccf.ingest -> agg.dir: "rsync radials"
+nccf.ingest -> agg.rtdb: "Mirror DB?" {
+  style: {
+    stroke: red
+  }
+}
+
+partner: Cloud Ingest {
+    link: https://asascience-open.github.io/nextgen-dmac/ingest/ingest-prototype.html
+  ingest: "rsync files" {
+    shape: image
+    icon: ./icons/sync-svgrepo-com.svg
+  }
+  s3: "S3" {
+    shape: image
+    icon: https://icons.terrastruct.com/aws%2FStorage%2FAmazon-Simple-Storage-Service-S3_Bucket-with-Objects_light-bg.svg
+  }
+}
+
+sites -> partner.ingest: "rsync" {
+  style.opacity: 1.0
+}
+
+nccf.ingest -> partner.s3: "Pull from dirty bucket" {
+  style.opacity: 1.0
+}
+
+scenarios: {
+  portals: {
+    title.label: Multiple Univ Based Portals
+    (nccf.ingest -> partner.s3)[0].style: {
+      opacity: 0.1
+    }
+    (sites -> partner.ingest)[0]: "rsync" {
+      style.opacity: 0.1
+    }
+    partner: {
+      ingest: {
+        style.opacity: 0.1
+      }
+      s3: {
+        style.opacity: 0.1
+      }
+      style.opacity: 0.1
+    }
+  }
+  cloud: {
+    title.label: Cloud ingest
+    agg: {
+      ingest: {
+        style.opacity: 0.1
+      }
+      process: {
+        style.opacity: 0.1
+      }
+      rtdb: {
+        style.opacity: 0.1
+      }
+      dir: {
+        style.opacity: 0.1
+      }
+
+      (ingest -> process)[0]: {
+        style.opacity: 0.1
+      }
+      (process -> dir)[0]: {
+        style.opacity: 0.1
+      }
+      (process -> rtdb)[0]: {
+        style.opacity: 0.1
+      }
+      style.opacity: 0.1
+    }
+    (sites -> agg.ingest)[0]: {
+      style.opacity: 0.1
+    }
+    style.opacity: 0.1
+    (nccf.ingest -> agg.dir)[0]: {
+        style.opacity: 0.1
+      }
+    (nccf.ingest -> agg.rtdb)[0]: {
+        style.opacity: 0.1
+      }
+  }
+}

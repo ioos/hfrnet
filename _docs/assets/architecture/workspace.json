@@ -1,0 +1,1010 @@
+{
+  "configuration" : { },
+  "description" : "Workspace for HFRNet system architecture.",
+  "documentation" : { },
+  "id" : 1,
+  "lastModifiedAgent" : "structurizr-javascript",
+  "lastModifiedDate" : "2024-04-19T21:59:38Z",
+  "model" : {
+    "deploymentNodes" : [ {
+      "containerInstances" : [ {
+        "containerId" : "8",
+        "deploymentGroups" : [ "Default" ],
+        "environment" : "NCCF",
+        "id" : "54",
+        "instanceId" : 1,
+        "properties" : {
+          "structurizr.dsl.identifier" : "prodinstance"
+        },
+        "relationships" : [ {
+          "description" : "Pulls data from",
+          "destinationId" : "55",
+          "id" : "56",
+          "linkedRelationshipId" : "35",
+          "sourceId" : "54"
+        }, {
+          "description" : "Query/update configuration and metrics.",
+          "destinationId" : "57",
+          "id" : "58",
+          "linkedRelationshipId" : "36",
+          "sourceId" : "54",
+          "technology" : "TCP/SQL"
+        } ],
+        "tags" : "Container Instance"
+      }, {
+        "containerId" : "5",
+        "deploymentGroups" : [ "Default" ],
+        "environment" : "NCCF",
+        "id" : "55",
+        "instanceId" : 1,
+        "properties" : {
+          "structurizr.dsl.identifier" : "siteaggregatorinstance"
+        },
+        "relationships" : [ {
+          "description" : "Query/update site configuration.",
+          "destinationId" : "59",
+          "id" : "60",
+          "linkedRelationshipId" : "37",
+          "sourceId" : "55"
+        } ],
+        "tags" : "Container Instance"
+      }, {
+        "containerId" : "18",
+        "deploymentGroups" : [ "Default" ],
+        "environment" : "NCCF",
+        "id" : "57",
+        "instanceId" : 1,
+        "properties" : {
+          "structurizr.dsl.identifier" : "proddbinstance"
+        },
+        "tags" : "Container Instance"
+      }, {
+        "containerId" : "7",
+        "deploymentGroups" : [ "Default" ],
+        "environment" : "NCCF",
+        "id" : "59",
+        "instanceId" : 1,
+        "properties" : {
+          "structurizr.dsl.identifier" : "aggregatordbinstance"
+        },
+        "tags" : "Container Instance"
+      } ],
+      "environment" : "NCCF",
+      "id" : "53",
+      "instances" : "1",
+      "name" : "NCCF Processing",
+      "properties" : {
+        "structurizr.dsl.identifier" : "7141972b-3178-4cab-8f6f-282d076b1b18"
+      },
+      "tags" : "Element,Deployment Node"
+    }, {
+      "environment" : "NCCF",
+      "id" : "61",
+      "instances" : "1",
+      "name" : "TetraTech Web Hosting",
+      "properties" : {
+        "structurizr.dsl.identifier" : "9dc17b10-4e82-44f8-9b12-3e01504c4045"
+      },
+      "softwareSystemInstances" : [ {
+        "deploymentGroups" : [ "Default" ],
+        "environment" : "NCCF",
+        "id" : "62",
+        "instanceId" : 1,
+        "properties" : {
+          "structurizr.dsl.identifier" : "websiteinstance"
+        },
+        "relationships" : [ {
+          "description" : "Pull metrics for visualization.",
+          "destinationId" : "54",
+          "id" : "63",
+          "linkedRelationshipId" : "42",
+          "sourceId" : "62"
+        }, {
+          "description" : "Query/update site configuration.",
+          "destinationId" : "55",
+          "id" : "64",
+          "linkedRelationshipId" : "39",
+          "sourceId" : "62"
+        } ],
+        "softwareSystemId" : "19",
+        "tags" : "Software System Instance"
+      } ],
+      "tags" : "Element,Deployment Node"
+    }, {
+      "environment" : "NDBC",
+      "id" : "65",
+      "instances" : "1",
+      "name" : "NDBC Dissemination",
+      "properties" : {
+        "structurizr.dsl.identifier" : "8a00a77b-f2fb-4227-9b03-85e9eda77c76"
+      },
+      "softwareSystemInstances" : [ {
+        "deploymentGroups" : [ "Default" ],
+        "environment" : "NDBC",
+        "id" : "66",
+        "instanceId" : 1,
+        "properties" : {
+          "structurizr.dsl.identifier" : "disseminationinstance"
+        },
+        "softwareSystemId" : "20",
+        "tags" : "Software System Instance"
+      } ],
+      "tags" : "Element,Deployment Node"
+    }, {
+      "containerInstances" : [ {
+        "containerId" : "24",
+        "deploymentGroups" : [ "Default" ],
+        "environment" : "NDBC",
+        "id" : "68",
+        "instanceId" : 1,
+        "properties" : {
+          "structurizr.dsl.identifier" : "threddsinstance"
+        },
+        "tags" : "Container Instance"
+      } ],
+      "environment" : "NDBC",
+      "id" : "67",
+      "instances" : "1",
+      "name" : "NDBC THREDDS",
+      "properties" : {
+        "structurizr.dsl.identifier" : "278144ce-4058-4613-a632-375ac34161d1"
+      },
+      "tags" : "Element,Deployment Node"
+    } ],
+    "people" : [ {
+      "description" : "A person (or system) that uses HFR derived products.",
+      "id" : "2",
+      "location" : "Unspecified",
+      "name" : "HFR User",
+      "properties" : {
+        "structurizr.dsl.identifier" : "hfruser"
+      },
+      "tags" : "Element,Person,User"
+    }, {
+      "description" : "A person responsible for configuring and maintaining a site.",
+      "id" : "3",
+      "location" : "Unspecified",
+      "name" : "Site Operator",
+      "properties" : {
+        "structurizr.dsl.identifier" : "hfroperator"
+      },
+      "relationships" : [ {
+        "description" : "Configure site",
+        "destinationId" : "19",
+        "id" : "32",
+        "properties" : {
+          "structurizr.dsl.identifier" : "8fe559a4-0148-4f62-be79-156604ca04b6"
+        },
+        "sourceId" : "3",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Person,User"
+    } ],
+    "softwareSystems" : [ {
+      "description" : "An HFR Station where a SeaSonde/WERA/LERA unit is installed and operating.",
+      "documentation" : { },
+      "id" : "1",
+      "location" : "Unspecified",
+      "name" : "HFR Site",
+      "properties" : {
+        "structurizr.dsl.identifier" : "hfrsite"
+      },
+      "relationships" : [ {
+        "description" : "Provides data.",
+        "destinationId" : "4",
+        "id" : "30",
+        "properties" : {
+          "structurizr.dsl.identifier" : "797dc682-191b-4122-b1f9-4d63987ec832"
+        },
+        "sourceId" : "1",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Software System,HFRSite"
+    }, {
+      "containers" : [ {
+        "components" : [ {
+          "description" : "Monitor and report site health metrics and site configuration.",
+          "documentation" : { },
+          "id" : "6",
+          "name" : "Aggregator Monitor",
+          "properties" : {
+            "structurizr.dsl.identifier" : "aggregatormonitor"
+          },
+          "tags" : "Element,Component,internal",
+          "technology" : "Python/Shell"
+        } ],
+        "description" : "Portal(s) to aggregate raw data from sites.",
+        "documentation" : { },
+        "id" : "5",
+        "name" : "Site Aggregator",
+        "properties" : {
+          "structurizr.dsl.identifier" : "siteaggregator"
+        },
+        "relationships" : [ {
+          "description" : "Aggregates radials/configuration",
+          "destinationId" : "1",
+          "id" : "33",
+          "properties" : {
+            "structurizr.dsl.identifier" : "54dbc73c-0649-4cb8-80ad-734245c2e30a"
+          },
+          "sourceId" : "5",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Query/update site configuration.",
+          "destinationId" : "7",
+          "id" : "37",
+          "properties" : {
+            "structurizr.dsl.identifier" : "c7223885-653a-4932-b2fa-b0b49259d5d1"
+          },
+          "sourceId" : "5",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container,internal",
+        "technology" : "Python/Shell"
+      }, {
+        "description" : "Maintain site configuration and [RESEARCH THIS]",
+        "documentation" : { },
+        "id" : "7",
+        "name" : "Site Aggregator Database",
+        "properties" : {
+          "structurizr.dsl.identifier" : "aggregatordb"
+        },
+        "tags" : "Element,Container,database",
+        "technology" : "MySQL"
+      }, {
+        "components" : [ {
+          "description" : "Method to egress product files from production.",
+          "documentation" : { },
+          "id" : "9",
+          "name" : "Egress",
+          "properties" : {
+            "structurizr.dsl.identifier" : "proddissemination"
+          },
+          "tags" : "Element,Component,internal",
+          "technology" : "FTP or S3"
+        }, {
+          "description" : "Scripts to orchestrate computations and data dissemination.",
+          "documentation" : { },
+          "id" : "10",
+          "name" : "Product Logic",
+          "properties" : {
+            "structurizr.dsl.identifier" : "prodlogic"
+          },
+          "relationships" : [ {
+            "description" : "Orchestrate RTV calculation and I/O",
+            "destinationId" : "12",
+            "id" : "14",
+            "properties" : {
+              "structurizr.dsl.identifier" : "a4e5e48b-973c-46e7-8b22-79bbed735862"
+            },
+            "sourceId" : "10",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Orchestrate waves calculation and I/O",
+            "destinationId" : "11",
+            "id" : "15",
+            "properties" : {
+              "structurizr.dsl.identifier" : "9e20c28d-d7b7-4edf-aa21-65ade0a7b4c7"
+            },
+            "sourceId" : "10",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Calculate metrics",
+            "destinationId" : "13",
+            "id" : "16",
+            "properties" : {
+              "structurizr.dsl.identifier" : "da9ea114-1a92-4930-8e63-01a3f3d4824f"
+            },
+            "sourceId" : "10",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Stages files for Egress",
+            "destinationId" : "9",
+            "id" : "17",
+            "properties" : {
+              "structurizr.dsl.identifier" : "8dc1b2e5-65db-414c-aaee-ea7b2e9fc3c0"
+            },
+            "sourceId" : "10",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component,internal",
+          "technology" : "Python/Shell"
+        }, {
+          "description" : "Matlab toolbox to calculate wave parameters from radial data.",
+          "documentation" : { },
+          "id" : "11",
+          "name" : "Waves",
+          "properties" : {
+            "structurizr.dsl.identifier" : "wavecalc"
+          },
+          "tags" : "Element,Component,internal",
+          "technology" : "Matlab to Python"
+        }, {
+          "description" : "Matlab toolbox to calculate Total Vectors from radial data.",
+          "documentation" : { },
+          "id" : "12",
+          "name" : "RTV",
+          "properties" : {
+            "structurizr.dsl.identifier" : "rtvcalc"
+          },
+          "tags" : "Element,Component,internal",
+          "technology" : "Matlab to Python"
+        }, {
+          "description" : "Monitor and report system health metrics (e.g. 80/80).",
+          "documentation" : { },
+          "id" : "13",
+          "name" : "Prod Monitor",
+          "properties" : {
+            "structurizr.dsl.identifier" : "prodmonitor"
+          },
+          "tags" : "Element,Component,internal",
+          "technology" : "Python/Shell"
+        } ],
+        "description" : "Collect data from Site Aggregators and process raw data into products.",
+        "documentation" : { },
+        "id" : "8",
+        "name" : "Product Dev",
+        "properties" : {
+          "structurizr.dsl.identifier" : "prod"
+        },
+        "relationships" : [ {
+          "description" : "Pulls data from",
+          "destinationId" : "5",
+          "id" : "35",
+          "properties" : {
+            "structurizr.dsl.identifier" : "dcfc32cb-ba53-4c1d-81b3-bcfb30f03430"
+          },
+          "sourceId" : "8",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Query/update configuration and metrics.",
+          "destinationId" : "18",
+          "id" : "36",
+          "properties" : {
+            "structurizr.dsl.identifier" : "03165b9f-b12f-40f3-aa57-fe44698864ee"
+          },
+          "sourceId" : "8",
+          "tags" : "Relationship",
+          "technology" : "TCP/SQL"
+        }, {
+          "description" : "Push products to",
+          "destinationId" : "29",
+          "id" : "45",
+          "properties" : {
+            "structurizr.dsl.identifier" : "a2ac8bd2-05a7-4389-9e09-d8379ce99efd"
+          },
+          "sourceId" : "8",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container,internal"
+      }, {
+        "description" : "Product database containing site configuration and data flow metrics.",
+        "documentation" : { },
+        "id" : "18",
+        "name" : "Product Database",
+        "properties" : {
+          "structurizr.dsl.identifier" : "proddb"
+        },
+        "tags" : "Element,Container,database",
+        "technology" : "MySQL"
+      } ],
+      "description" : "Aggregate raw data and process into useful outputs for dissemination.",
+      "documentation" : { },
+      "id" : "4",
+      "location" : "Unspecified",
+      "name" : "HFRNet",
+      "properties" : {
+        "structurizr.dsl.identifier" : "hfrnetss"
+      },
+      "relationships" : [ {
+        "description" : "Uses products.",
+        "destinationId" : "2",
+        "id" : "31",
+        "properties" : {
+          "structurizr.dsl.identifier" : "9e5d0148-be77-462f-9394-06b59482559d"
+        },
+        "sourceId" : "4",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Aggregates radials/configuration",
+        "destinationId" : "1",
+        "id" : "34",
+        "linkedRelationshipId" : "33",
+        "sourceId" : "4"
+      }, {
+        "description" : "Push products to",
+        "destinationId" : "29",
+        "id" : "46",
+        "linkedRelationshipId" : "45",
+        "sourceId" : "4"
+      } ],
+      "tags" : "Element,Software System,HFRNetSS"
+    }, {
+      "description" : "Services that provides visualizations of products and metrics; manages site configuration.",
+      "documentation" : { },
+      "id" : "19",
+      "location" : "Unspecified",
+      "name" : "System status website",
+      "properties" : {
+        "structurizr.dsl.identifier" : "hfrnetwebsite"
+      },
+      "relationships" : [ {
+        "description" : "Query/update site configuration.",
+        "destinationId" : "6",
+        "id" : "38",
+        "properties" : {
+          "structurizr.dsl.identifier" : "129425d2-0d48-4696-bcf8-d6d4eede7150"
+        },
+        "sourceId" : "19",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Query/update site configuration.",
+        "destinationId" : "5",
+        "id" : "39",
+        "linkedRelationshipId" : "38",
+        "sourceId" : "19"
+      }, {
+        "description" : "Query/update site configuration.",
+        "destinationId" : "4",
+        "id" : "40",
+        "linkedRelationshipId" : "38",
+        "sourceId" : "19"
+      }, {
+        "description" : "Pull metrics for visualization.",
+        "destinationId" : "13",
+        "id" : "41",
+        "properties" : {
+          "structurizr.dsl.identifier" : "eeddeb9a-8c5e-4209-995d-eca5a5a22a47"
+        },
+        "sourceId" : "19",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Pull metrics for visualization.",
+        "destinationId" : "8",
+        "id" : "42",
+        "linkedRelationshipId" : "41",
+        "sourceId" : "19"
+      }, {
+        "description" : "Access OGC/WMS API access to visualize maps.",
+        "destinationId" : "24",
+        "id" : "43",
+        "properties" : {
+          "structurizr.dsl.identifier" : "bdcf8cf9-3cce-432c-804c-3c5365737db0"
+        },
+        "sourceId" : "19",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Access OGC/WMS API access to visualize maps.",
+        "destinationId" : "20",
+        "id" : "44",
+        "linkedRelationshipId" : "43",
+        "sourceId" : "19"
+      } ],
+      "tags" : "Element,Software System,html,OpenMaps,Javascript.,website"
+    }, {
+      "containers" : [ {
+        "description" : "Create archive packages and send to NCEI.",
+        "documentation" : { },
+        "id" : "21",
+        "name" : "Archiver",
+        "properties" : {
+          "structurizr.dsl.identifier" : "archiver"
+        },
+        "tags" : "Element,Container"
+      }, {
+        "description" : "Convert from netCDF to GTS formats",
+        "documentation" : { },
+        "id" : "22",
+        "name" : "Reformatter",
+        "properties" : {
+          "structurizr.dsl.identifier" : "reformatter"
+        },
+        "tags" : "Element,Container"
+      }, {
+        "description" : "Push data to NWSTG via ftpsin 421",
+        "documentation" : { },
+        "id" : "23",
+        "name" : "Distributor",
+        "properties" : {
+          "structurizr.dsl.identifier" : "distributor"
+        },
+        "tags" : "Element,Container"
+      }, {
+        "description" : "Service to organize and publish products (e.g RTV) to customers, including NOAA Operations.",
+        "documentation" : { },
+        "id" : "24",
+        "name" : "THREDDS Data Server",
+        "properties" : {
+          "structurizr.dsl.identifier" : "thredds"
+        },
+        "tags" : "Element,Container",
+        "technology" : "OPeNDAP, OGC/WMS (ncWMS), other APIs"
+      } ],
+      "description" : "Retrieve files from Egress, reformat, and distribute.",
+      "documentation" : { },
+      "id" : "20",
+      "location" : "Unspecified",
+      "name" : "Operational Dissemination",
+      "properties" : {
+        "structurizr.dsl.identifier" : "dissemination"
+      },
+      "relationships" : [ {
+        "description" : "Retrieve files from PDA",
+        "destinationId" : "29",
+        "id" : "47",
+        "properties" : {
+          "structurizr.dsl.identifier" : "eb15f53a-0339-43df-87c7-ae73aa83f231"
+        },
+        "sourceId" : "20",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Publish monthly archive packages.",
+        "destinationId" : "27",
+        "id" : "48",
+        "properties" : {
+          "structurizr.dsl.identifier" : "46a17c9f-f05c-446a-8b9b-189b977b1c05"
+        },
+        "sourceId" : "20",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Provide [type?] files to NWSTG via Line ftpsin 421.",
+        "destinationId" : "25",
+        "id" : "49",
+        "properties" : {
+          "structurizr.dsl.identifier" : "a7158318-7cf1-4cf8-ab22-d790cbadd6a3"
+        },
+        "sourceId" : "20",
+        "tags" : "Relationship",
+        "technology" : "FTP"
+      } ],
+      "tags" : "Element,Software System,external"
+    }, {
+      "description" : "NWS managed gateway to the WMO GTS for international dissemination.",
+      "documentation" : { },
+      "id" : "25",
+      "location" : "Unspecified",
+      "name" : "NWSTG",
+      "properties" : {
+        "structurizr.dsl.identifier" : "nwstg"
+      },
+      "tags" : "Element,Software System,external"
+    }, {
+      "description" : "Datastore (/dcom) available to the NOAA Operational compute system WCOSS2.",
+      "documentation" : { },
+      "id" : "26",
+      "location" : "Unspecified",
+      "name" : "NCEP Data Tank",
+      "properties" : {
+        "structurizr.dsl.identifier" : "data_tanks"
+      },
+      "relationships" : [ {
+        "description" : "Access OPeNDAP to populate data tanks via wget.",
+        "destinationId" : "24",
+        "id" : "50",
+        "properties" : {
+          "structurizr.dsl.identifier" : "20a30a14-72ad-4db5-9d5c-30fcbf86a2c9"
+        },
+        "sourceId" : "26",
+        "tags" : "Relationship",
+        "technology" : "Shell/wget"
+      }, {
+        "description" : "Access OPeNDAP to populate data tanks via wget.",
+        "destinationId" : "20",
+        "id" : "51",
+        "linkedRelationshipId" : "50",
+        "sourceId" : "26",
+        "technology" : "Shell/wget"
+      } ],
+      "tags" : "Element,Software System,external"
+    }, {
+      "description" : "NCEI Archive for public dissemination.",
+      "documentation" : { },
+      "id" : "27",
+      "location" : "Unspecified",
+      "name" : "NCEI Archive",
+      "properties" : {
+        "structurizr.dsl.identifier" : "archive"
+      },
+      "tags" : "Element,Software System,external"
+    }, {
+      "description" : "ERRDAP server providing access to radial data files.",
+      "documentation" : { },
+      "id" : "28",
+      "location" : "Unspecified",
+      "name" : "ERDDAP",
+      "properties" : {
+        "structurizr.dsl.identifier" : "radials_erddap"
+      },
+      "relationships" : [ {
+        "description" : "Retrieve radials",
+        "destinationId" : "20",
+        "id" : "52",
+        "properties" : {
+          "structurizr.dsl.identifier" : "975e1689-9a13-42a9-88a1-4854c4aad4bf"
+        },
+        "sourceId" : "28",
+        "tags" : "Relationship",
+        "technology" : "FTP"
+      } ],
+      "tags" : "Element,Software System,external"
+    }, {
+      "description" : "NESDIS Product Dissemination A???",
+      "documentation" : { },
+      "id" : "29",
+      "location" : "Unspecified",
+      "name" : "PDA",
+      "properties" : {
+        "structurizr.dsl.identifier" : "pda"
+      },
+      "tags" : "Element,Software System,external"
+    } ]
+  },
+  "name" : "HFRNet",
+  "properties" : {
+    "structurizr.dsl" : "Ci8qCiAqCiAqIC0gIkhGUk5ldCAtIEZvY3VzZWQgZXhjbHVzaXZlbHkgb24gdGhlIHRvIGJlIHN5c3RlbSwgZWxpbWluYXRlIEhGUk5ldCB2MS4wIG5vbWVuY2xhdHVyZSBhbmQgYXNzdW1wdGlvbnMuCiAqICBTeXN0ZW0gTGFuZHNjYXBlIGFuZCBTeXN0ZW0gQ29udGV4dCIgCiovCndvcmtzcGFjZSAiSEZSTmV0IiAiV29ya3NwYWNlIGZvciBIRlJOZXQgc3lzdGVtIGFyY2hpdGVjdHVyZS4iIHsKCiAgICBtb2RlbCB7CiAgICAgICAgaGZyU2l0ZSA9IHNvZnR3YXJlU3lzdGVtICJIRlIgU2l0ZSIgIkFuIEhGUiBTdGF0aW9uIHdoZXJlIGEgU2VhU29uZGUvV0VSQS9MRVJBIHVuaXQgaXMgaW5zdGFsbGVkIGFuZCBvcGVyYXRpbmcuIiB7CiAgICAgICAgICAgIHRhZ3MgIkhGUlNpdGUiCiAgICAgICAgfQogICAgICAgIGhmclVzZXIgPSBwZXJzb24gIkhGUiBVc2VyIiAiQSBwZXJzb24gKG9yIHN5c3RlbSkgdGhhdCB1c2VzIEhGUiBkZXJpdmVkIHByb2R1Y3RzLiIgewogICAgICAgICAgICB0YWdzICJVc2VyIgogICAgICAgIH0KICAgICAgICBoZnJPcGVyYXRvciA9IHBlcnNvbiAiU2l0ZSBPcGVyYXRvciIgIkEgcGVyc29uIHJlc3BvbnNpYmxlIGZvciBjb25maWd1cmluZyBhbmQgbWFpbnRhaW5pbmcgYSBzaXRlLiIgewogICAgICAgICAgICB0YWdzICJVc2VyIgogICAgICAgIH0KLyogY29udGFpbmVyIDxuYW1lPiBbZGVzY3JpcHRpb25dIFt0ZWNobm9sb2d5XSBbdGFnc10gewogKiAgIC4uLgogKiB9CiAqIAogKiBzb2Z0d2FyZVN5c3RlbSA8bmFtZT4gW2Rlc2NyaXB0aW9uXSBbdGFnc10gewogKiAgICAuLi4KICogfQoqLwogICAgICAgIGhmcm5ldFNTID0gc29mdHdhcmVzeXN0ZW0gIkhGUk5ldCIgIkFnZ3JlZ2F0ZSByYXcgZGF0YSBhbmQgcHJvY2VzcyBpbnRvIHVzZWZ1bCBvdXRwdXRzIGZvciBkaXNzZW1pbmF0aW9uLiIgewogICAgICAgICAgICB0YWdzICJIRlJOZXRTUyIKICAgICAgICAgICAgCiAgICAgICAgICAgIHNpdGVBZ2dyZWdhdG9yID0gY29udGFpbmVyICJTaXRlIEFnZ3JlZ2F0b3IiICJQb3J0YWwocykgdG8gYWdncmVnYXRlIHJhdyBkYXRhIGZyb20gc2l0ZXMuIiAiUHl0aG9uL1NoZWxsIiB7CiAgICAgICAgICAgICAgICB0YWdzICJpbnRlcm5hbCIKICAgICAgICAgICAgICAgIGFnZ3JlZ2F0b3JNb25pdG9yID0gQ29tcG9uZW50ICJBZ2dyZWdhdG9yIE1vbml0b3IiICJNb25pdG9yIGFuZCByZXBvcnQgc2l0ZSBoZWFsdGggbWV0cmljcyBhbmQgc2l0ZSBjb25maWd1cmF0aW9uLiIgIlB5dGhvbi9TaGVsbCIgewogICAgICAgICAgICAgICAgdGFncyAiaW50ZXJuYWwiCiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgIH0gICAKICAgICAgICAgICAgYWdncmVnYXRvckRCICA9IGNvbnRhaW5lciAiU2l0ZSBBZ2dyZWdhdG9yIERhdGFiYXNlIiAiTWFpbnRhaW4gc2l0ZSBjb25maWd1cmF0aW9uIGFuZCBbUkVTRUFSQ0ggVEhJU10iICJNeVNRTCIgewogICAgICAgICAgICAgICAgdGFncyAiZGF0YWJhc2UiCiAgICAgICAgICAgIH0KICAgICAgICAgICAgLy8gVE9ETzogTG9vayBhdCB0aGUgTkNDRiBzbGlkZXMgYW5kIHVwZGF0ZSBub2RlIHRvIGJlIGNvbnNpc3RlbnQgd2l0aCB0aGVpciB0ZXJtaW5vbG9neSAocHJvZGRldj8pCiAgICAgICAgICAgIHByb2QgPSBjb250YWluZXIgIlByb2R1Y3QgRGV2IiAiQ29sbGVjdCBkYXRhIGZyb20gU2l0ZSBBZ2dyZWdhdG9ycyBhbmQgcHJvY2VzcyByYXcgZGF0YSBpbnRvIHByb2R1Y3RzLiIgewogICAgICAgICAgICAgICAgdGFncyAiaW50ZXJuYWwiCiAgICAgICAgICAgICAgICBwcm9kRGlzc2VtaW5hdGlvbiA9IENvbXBvbmVudCAiRWdyZXNzIiAiTWV0aG9kIHRvIGVncmVzcyBwcm9kdWN0IGZpbGVzIGZyb20gcHJvZHVjdGlvbi4iICJGVFAgb3IgUzMiIHsKICAgICAgICAgICAgICAgIHRhZ3MgImludGVybmFsIgogICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgcHJvZExvZ2ljID0gQ29tcG9uZW50ICJQcm9kdWN0IExvZ2ljIiAiU2NyaXB0cyB0byBvcmNoZXN0cmF0ZSBjb21wdXRhdGlvbnMgYW5kIGRhdGEgZGlzc2VtaW5hdGlvbi4iICJQeXRob24vU2hlbGwiIHsKICAgICAgICAgICAgICAgIHRhZ3MgImludGVybmFsIgogICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgd2F2ZUNhbGMgPSBDb21wb25lbnQgIldhdmVzIiAiTWF0bGFiIHRvb2xib3ggdG8gY2FsY3VsYXRlIHdhdmUgcGFyYW1ldGVycyBmcm9tIHJhZGlhbCBkYXRhLiIgIk1hdGxhYiB0byBQeXRob24iIHsKICAgICAgICAgICAgICAgIHRhZ3MgImludGVybmFsIgogICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgcnR2Q2FsYyA9IENvbXBvbmVudCAiUlRWIiAiTWF0bGFiIHRvb2xib3ggdG8gY2FsY3VsYXRlIFRvdGFsIFZlY3RvcnMgZnJvbSByYWRpYWwgZGF0YS4iICJNYXRsYWIgdG8gUHl0aG9uIiB7CiAgICAgICAgICAgICAgICB0YWdzICJpbnRlcm5hbCIKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIHByb2RNb25pdG9yID0gQ29tcG9uZW50ICJQcm9kIE1vbml0b3IiICJNb25pdG9yIGFuZCByZXBvcnQgc3lzdGVtIGhlYWx0aCBtZXRyaWNzIChlLmcuIDgwLzgwKS4iICJQeXRob24vU2hlbGwiIHsKICAgICAgICAgICAgICAgIHRhZ3MgImludGVybmFsIgogICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgcHJvZExvZ2ljIC0+IHJ0dkNhbGMgIk9yY2hlc3RyYXRlIFJUViBjYWxjdWxhdGlvbiBhbmQgSS9PIgogICAgICAgICAgICAgICAgcHJvZExvZ2ljIC0+IHdhdmVDYWxjICJPcmNoZXN0cmF0ZSB3YXZlcyBjYWxjdWxhdGlvbiBhbmQgSS9PIgogICAgICAgICAgICAgICAgcHJvZExvZ2ljIC0+IHByb2RNb25pdG9yICJDYWxjdWxhdGUgbWV0cmljcyIKICAgICAgICAgICAgICAgIHByb2RMb2dpYyAtPiBwcm9kRGlzc2VtaW5hdGlvbiAiU3RhZ2VzIGZpbGVzIGZvciBFZ3Jlc3MiCiAgICAgICAgICAgIH0KICAgICAgICAgICAgcHJvZERCID0gY29udGFpbmVyICJQcm9kdWN0IERhdGFiYXNlIiAiUHJvZHVjdCBkYXRhYmFzZSBjb250YWluaW5nIHNpdGUgY29uZmlndXJhdGlvbiBhbmQgZGF0YSBmbG93IG1ldHJpY3MuIiAiTXlTUUwiIHsKICAgICAgICAgICAgICAgIHRhZ3MgImRhdGFiYXNlIgogICAgICAgICAgICB9CiAgICAgICAgfSAvLyBFbmQgaGZybmV0IHNvZnR3YXJlc3lzdGVtCgogICAgICAgIC8vIEV4dGVybmFsIFN5c3RlbXMKICAgICAgICBoZnJuZXRXZWJzaXRlID0gc29mdHdhcmVTeXN0ZW0gIlN5c3RlbSBzdGF0dXMgd2Vic2l0ZSIgIlNlcnZpY2VzIHRoYXQgcHJvdmlkZXMgdmlzdWFsaXphdGlvbnMgb2YgcHJvZHVjdHMgYW5kIG1ldHJpY3M7IG1hbmFnZXMgc2l0ZSBjb25maWd1cmF0aW9uLiIgImh0bWwsIE9wZW5NYXBzLCBKYXZhc2NyaXB0LiIgewogICAgICAgICAgICB0YWdzICJ3ZWJzaXRlIgogICAgICAgIH0KICAgICAgICBkaXNzZW1pbmF0aW9uID0gc29mdHdhcmVTeXN0ZW0gIk9wZXJhdGlvbmFsIERpc3NlbWluYXRpb24iICJSZXRyaWV2ZSBmaWxlcyBmcm9tIEVncmVzcywgcmVmb3JtYXQsIGFuZCBkaXN0cmlidXRlLiIgewogICAgICAgICAgICBhcmNoaXZlciA9IGNvbnRhaW5lciAiQXJjaGl2ZXIiICJDcmVhdGUgYXJjaGl2ZSBwYWNrYWdlcyBhbmQgc2VuZCB0byBOQ0VJLiIKICAgICAgICAgICAgcmVmb3JtYXR0ZXIgPSBDb250YWluZXIgIlJlZm9ybWF0dGVyIiAiQ29udmVydCBmcm9tIG5ldENERiB0byBHVFMgZm9ybWF0cyIKICAgICAgICAgICAgZGlzdHJpYnV0b3IgPSBDb250YWluZXIgIkRpc3RyaWJ1dG9yIiAiUHVzaCBkYXRhIHRvIE5XU1RHIHZpYSBmdHBzaW4gNDIxIgogICAgICAgICAgICB0aHJlZGRzID0gQ29udGFpbmVyICJUSFJFRERTIERhdGEgU2VydmVyIiAiU2VydmljZSB0byBvcmdhbml6ZSBhbmQgcHVibGlzaCBwcm9kdWN0cyAoZS5nIFJUVikgdG8gY3VzdG9tZXJzLCBpbmNsdWRpbmcgTk9BQSBPcGVyYXRpb25zLiIgIk9QZU5EQVAsIE9HQy9XTVMgKG5jV01TKSwgb3RoZXIgQVBJcyIgIAogICAgICAgICAgICB0YWdzICJleHRlcm5hbCIKICAgICAgICB9CiAgICAgICAgbndzdGcgPSBzb2Z0d2FyZXN5c3RlbSAiTldTVEciICJOV1MgbWFuYWdlZCBnYXRld2F5IHRvIHRoZSBXTU8gR1RTIGZvciBpbnRlcm5hdGlvbmFsIGRpc3NlbWluYXRpb24uIiB7CiAgICAgICAgICAgIHRhZ3MgImV4dGVybmFsIgogICAgICAgIH0KICAgICAgICBkYXRhX3RhbmtzID0gc29mdHdhcmVzeXN0ZW0gIk5DRVAgRGF0YSBUYW5rIiAiRGF0YXN0b3JlICgvZGNvbSkgYXZhaWxhYmxlIHRvIHRoZSBOT0FBIE9wZXJhdGlvbmFsIGNvbXB1dGUgc3lzdGVtIFdDT1NTMi4iIHsKICAgICAgICAgICAgdGFncyAiZXh0ZXJuYWwiCiAgICAgICAgfQogICAgICAgIGFyY2hpdmUgPSBzb2Z0d2FyZXN5c3RlbSAiTkNFSSBBcmNoaXZlIiAiTkNFSSBBcmNoaXZlIGZvciBwdWJsaWMgZGlzc2VtaW5hdGlvbi4iIHsKICAgICAgICAgICAgdGFncyAiZXh0ZXJuYWwiCiAgICAgICAgfQogICAgICAgIHJhZGlhbHNfZXJkZGFwID0gc29mdHdhcmVzeXN0ZW0gIkVSRERBUCIgIkVSUkRBUCBzZXJ2ZXIgcHJvdmlkaW5nIGFjY2VzcyB0byByYWRpYWwgZGF0YSBmaWxlcy4iewogICAgICAgICAgICB0YWdzICJleHRlcm5hbCIKICAgICAgICB9CiAgICAgICAgcGRhID0gc29mdHdhcmVzeXN0ZW0gIlBEQSIgIk5FU0RJUyBQcm9kdWN0IERpc3NlbWluYXRpb24gQT8/PyIgewogICAgICAgICAgICB0YWdzICJleHRlcm5hbCIKICAgICAgICB9CgogICAgICAgIC8vIERlZmluZSByZWxhdGlvbnNoaXBzIGNvbnRhaW5lci9jb250YWluZXIKICAgICAgICAvKiA8aWRlbnRpZmllcj4gLT4gPGlkZW50aWZpZXI+IFtkZXNjcmlwdGlvbl0gW3RlY2hub2xvZ3ldIFt0YWdzXSB7CiAgICAgICAgICogICAgLi4uCiAgICAgICAgICogfQogICAgICAgICovCiAgICAgICAgaGZyU2l0ZSAtPiBoZnJuZXRTUyAiUHJvdmlkZXMgZGF0YS4iCiAgICAgICAgaGZybmV0U1MgLT4gaGZyVXNlciAiVXNlcyBwcm9kdWN0cy4iCiAgICAgICAgaGZyT3BlcmF0b3IgLT4gaGZybmV0V2Vic2l0ZSAiQ29uZmlndXJlIHNpdGUiCgogICAgICAgIC8vIENvbnRhaW5lciB0byBDb250YWluZXIgcmVsYXRpb25zaGlwcwogICAgICAgIHNpdGVBZ2dyZWdhdG9yIC0+IGhmclNpdGUgIkFnZ3JlZ2F0ZXMgcmFkaWFscy9jb25maWd1cmF0aW9uIgogICAgICAgIHByb2QgLT4gc2l0ZUFnZ3JlZ2F0b3IgIlB1bGxzIGRhdGEgZnJvbSIKICAgICAgICBwcm9kIC0+IHByb2REQiAiUXVlcnkvdXBkYXRlIGNvbmZpZ3VyYXRpb24gYW5kIG1ldHJpY3MuIiAiVENQL1NRTCIKICAgICAgICBzaXRlQWdncmVnYXRvciAtPiBhZ2dyZWdhdG9yREIgIlF1ZXJ5L3VwZGF0ZSBzaXRlIGNvbmZpZ3VyYXRpb24uIgogICAgICAgIGhmcm5ldFdlYnNpdGUgLT4gYWdncmVnYXRvck1vbml0b3IgIlF1ZXJ5L3VwZGF0ZSBzaXRlIGNvbmZpZ3VyYXRpb24uIgogICAgICAgIGhmcm5ldFdlYnNpdGUgLT4gcHJvZE1vbml0b3IgIlB1bGwgbWV0cmljcyBmb3IgdmlzdWFsaXphdGlvbi4iCiAgICAgICAgaGZybmV0V2Vic2l0ZSAtPiB0aHJlZGRzICJBY2Nlc3MgT0dDL1dNUyBBUEkgYWNjZXNzIHRvIHZpc3VhbGl6ZSBtYXBzLiIKICAgICAgICBwcm9kIC0+IHBkYSAiUHVzaCBwcm9kdWN0cyB0byIKICAgICAgICBkaXNzZW1pbmF0aW9uIC0+IHBkYSAgIlJldHJpZXZlIGZpbGVzIGZyb20gUERBIgogICAgICAgIGRpc3NlbWluYXRpb24gLT4gYXJjaGl2ZSAiUHVibGlzaCBtb250aGx5IGFyY2hpdmUgcGFja2FnZXMuIgoKICAgICAgICAvLyBGYW5nIFdlbmcgTkRCQyB0byBOQ0VQIHZpYSBmdHBzaW4gbGluZSA0MjEgaXMgb25lIHJvdXRlIG9mIGdldHRpbmcgaGZyIHRvIHRoZSBURyAoSURQIERhdGFmbG93IHRlYW0gKG5jby5pZHAuZGF0YWZsb3dAbm9hYS5nb3YpKQogICAgICAgIGRpc3NlbWluYXRpb24gLT4gbndzdGcgIlByb3ZpZGUgW3R5cGU/XSBmaWxlcyB0byBOV1NURyB2aWEgTGluZSBmdHBzaW4gNDIxLiIgIkZUUCIKICAgICAgICBkYXRhX3RhbmtzIC0+IHRocmVkZHMgIkFjY2VzcyBPUGVOREFQIHRvIHBvcHVsYXRlIGRhdGEgdGFua3MgdmlhIHdnZXQuIiAiU2hlbGwvd2dldCIKICAgICAgICByYWRpYWxzX2VyZGRhcCAtPiBkaXNzZW1pbmF0aW9uICAiUmV0cmlldmUgcmFkaWFscyIgIkZUUCIKCiAgICAgICAgCiAgICAgICAgLy8gTWlzc2luZyByZWxhdGlvbnNoaXAgYmV0d2VlbiBOREJDIHRvIFdDT1NTIGFuZC9vciBOQ0VQIGRhdGEgdGFua3MgdmlhIG5jZXAgZGVjb2RlcnMgdGVhbSAoRmFuZyBXZW5nIGVtYWlsKQoKICAgICAgICAvLyBEZXBsb3ltZW50IEVudmlyb25tZW50cwogICAgICAgIG5jY2YgPSBkZXBsb3ltZW50RW52aXJvbm1lbnQgIk5DQ0YiIHsKICAgICAgICAgICAgZGVwbG95bWVudE5vZGUgIk5DQ0YgUHJvY2Vzc2luZyIgewogICAgICAgICAgICAgICAgcHJvZEluc3RhbmNlID0gY29udGFpbmVySW5zdGFuY2UgcHJvZAogICAgICAgICAgICAgICAgc2l0ZUFnZ3JlZ2F0b3JJbnN0YW5jZSA9IGNvbnRhaW5lckluc3RhbmNlIHNpdGVBZ2dyZWdhdG9yCiAgICAgICAgICAgICAgICBwcm9kREJJbnN0YW5jZSA9IGNvbnRhaW5lckluc3RhbmNlIHByb2REQgogICAgICAgICAgICAgICAgYWdncmVnYXRvckRCSW5zdGFuY2UgPSBjb250YWluZXJJbnN0YW5jZSBhZ2dyZWdhdG9yREIKICAgICAgICAgICAgICAgIAogICAgICAgICAgICB9CiAgICAgICAgICAgIGRlcGxveW1lbnROb2RlICJUZXRyYVRlY2ggV2ViIEhvc3RpbmciIHsKICAgICAgICAgICAgICAgIHdlYnNpdGVJbnN0YW5jZSA9IHNvZnR3YXJlU3lzdGVtSW5zdGFuY2UgaGZybmV0V2Vic2l0ZQogICAgICAgICAgICB9ICAgCiAgICAgICAgfSAvLyBFbmQgRGVwbG95bWVudCBFbnZpcm9ubWVudCBDT1JEQwoKICAgICAgICBkaXNzZW1pbmF0aW9uRGVwbG95bWVudCA9IGRlcGxveW1lbnRFbnZpcm9ubWVudCAiTkRCQyIgewogICAgICAgICAgICBkZXBsb3ltZW50Tm9kZSAiTkRCQyBEaXNzZW1pbmF0aW9uIiB7CiAgICAgICAgICAgICAgICBkaXNzZW1pbmF0aW9uSW5zdGFuY2UgPSBzb2Z0d2FyZVN5c3RlbUluc3RhbmNlIGRpc3NlbWluYXRpb24KICAgICAgICAgICAgfQogICAgICAgICAgICBkZXBsb3ltZW50Tm9kZSAiTkRCQyBUSFJFRERTIiB7CiAgICAgICAgICAgICAgICB0aHJlZGRzSW5zdGFuY2UgPSBjb250YWluZXJJbnN0YW5jZSB0aHJlZGRzCiAgICAgICAgICAgIH0KICAgICAgICB9ICAvLyBFbmQgRGVwbG95bWVudCBFbnZpcm9ubWVudCBOREJDCgogICAgfSAvLyBFbmQgbW9kZWwKCiAgICAvLyBWaWV3cwogICAgdmlld3MgewogICAgICAgIC8vIFN5c3RlbSBDb250ZXh0IFZpZXcgc3RhcnRpbmcgcG9pbnQKICAgICAgICBzeXN0ZW1Db250ZXh0IGhmcm5ldFNTICJIRlJOZXRTeXN0ZW1Db250ZXh0IiB7CiAgICAgICAgICAgIGluY2x1ZGUgKgogICAgICAgICAgICBhdXRvTGF5b3V0IGxyCiAgICAgICAgfQoKICAgICAgICAvLyBTeXN0ZW0gTGFuZHNjYXBlIFZpZXcgTW9yZSBjb21wcmVoZW5zaXZlIGZyZWVmb3JtIHZpZXcgb2Ygd2hlcmUgaXQgZml0cyB3aXRoIG90aGVyIGV4dGVybmFsIGVudGl0aWVzCiAgICAgICAgc3lzdGVtTGFuZHNjYXBlIGhmcm5ldFNTTGFuZHNjYXBlICJIRlJOZXQgU3lzdGVtIExhbmRzY2FwZSIgewogICAgICAgICAgICBpbmNsdWRlICoKICAgICAgICAgICAgYXV0b2xheW91dCBscgogICAgICAgIH0KCiAgICAgICAgLy8gQ29udGFpbmVyIFZpZXcKICAgICAgICBjb250YWluZXIgaGZybmV0U1MgIkhGUk5ldENvbnRhaW5lclZpZXciIHsKICAgICAgICAgICAgaW5jbHVkZSAqCiAgICAgICAgICAgIGF1dG9sYXlvdXQgbHIKICAgICAgICB9CiAgICAgICAgLy8gQ29tcG9uZW50IFZpZXdzCiAgICAgICAgY29tcG9uZW50IHByb2QgIlByb2R1Y3REZXZlbG9wbWVudFNlcnZlciIgewogICAgICAgICAgICBpbmNsdWRlICoKICAgICAgICAgICAgYXV0b0xheW91dCBscgogICAgICAgIH0KCiAgICAgICAgLy8gRGVwbG95bWVudCBWaWV3IGF0IE5DQ0YKICAgICAgICBkZXBsb3ltZW50IGhmcm5ldFNTICJOQ0NGIiAiTkNDRlByb2Nlc3NpbmciIHsKICAgICAgICAgICAgaW5jbHVkZSAqCiAgICAgICAgICAgIGF1dG9sYXlvdXQgbHIKICAgICAgICB9CiAgICAgICAgLy8gRGVwbG95bWVudCBWaWV3IGF0IE5EQkMKICAgICAgICBkZXBsb3ltZW50IGhmcm5ldFNTICJOREJDIiB7CiAgICAgICAgICAgIGluY2x1ZGUgKgogICAgICAgICAgICBhdXRvbGF5b3V0IGxyCiAgICAgICAgfQoKCiAgICAgICAgLy8gRWxlbWVudCBTdHlsZXMgRm9yIGludGVybmFsIGNvbnRhaW5lcnMgIzg3Q0VFQgovKiBlbGVtZW50IDx0YWc+IHsKICAgIHNoYXBlIDxCb3h8Um91bmRlZEJveHxDaXJjbGV8RWxsaXBzZXxIZXhhZ29ufEN5bGluZGVyfFBpcGV8UGVyc29ufFJvYm90fEZvbGRlcnxXZWJCcm93c2VyfE1vYmlsZURldmljZVBvcnRyYWl0fE1vYmlsZURldmljZUxhbmRzY2FwZXxDb21wb25lbnQ+CiAgICBpY29uIDxmaWxlfHVybD4KICAgIHdpZHRoIDxpbnRlZ2VyPgogICAgaGVpZ2h0IDxpbnRlZ2VyPgogICAgYmFja2dyb3VuZCA8I3JyZ2diYnxjb2xvciBuYW1lPgogICAgY29sb3IgPCNycmdnYmJ8Y29sb3IgbmFtZT4KICAgIGNvbG91ciA8I3JyZ2diYnxjb2xvciBuYW1lPgogICAgc3Ryb2tlIDwjcnJnZ2JifGNvbG9yIG5hbWU+CiAgICBzdHJva2VXaWR0aCA8aW50ZWdlcjogMS0xMD4KICAgIGZvbnRTaXplIDxpbnRlZ2VyPgogICAgYm9yZGVyIDxzb2xpZHxkYXNoZWR8ZG90dGVkPgogICAgb3BhY2l0eSA8aW50ZWdlcjogMC0xMDA+CiAgICBtZXRhZGF0YSA8dHJ1ZXxmYWxzZT4KICAgIGRlc2NyaXB0aW9uIDx0cnVlfGZhbHNlPgogICAgcHJvcGVydGllcyB7CiAgICAgICAgbmFtZSB2YWx1ZQogICAgfQp9CiAqLyAgICAgICAgCiAgICAgICAgc3R5bGVzIHsKICAgICAgICAgICAgZWxlbWVudCAiVXNlciIgewogICAgICAgICAgICAgICAgc2hhcGUgUm9ib3QKICAgICAgICAgICAgfQogICAgICAgICAgICBlbGVtZW50ICJoZnJTaXRlIiB7CiAgICAgICAgICAgICAgICBzaGFwZSBSb2JvdAogICAgICAgICAgICAgICAgYmFja2dyb3VuZCAjNTVENkY4CiAgICAgICAgICAgIH0KICAgICAgICAgICAgZWxlbWVudCAiSEZSTmV0U1MiIHsKICAgICAgICAgICAgICAgIGJhY2tncm91bmQgIzFFMkQ3OAogICAgICAgICAgICAgICAgY29sb3Igd2hpdGUKICAgICAgICAgICAgICAgIHNoYXBlIFJvdW5kZWRCb3gKICAgICAgICAgICAgfQogICAgICAgICAgICBlbGVtZW50ICJpbnRlcm5hbCIgewogICAgICAgICAgICAgICAgYmFja2dyb3VuZCAjODdDRUVCCiAgICAgICAgICAgICAgICBzaGFwZSBSb3VuZGVkQm94CiAgICAgICAgICAgIH0KICAgICAgICAgICAgZWxlbWVudCAid2Vic2l0ZSIgewogICAgICAgICAgICAgICAgYmFja2dyb3VuZCAjODdDRUVCCiAgICAgICAgICAgICAgICBzaGFwZSBXZWJCcm93c2VyCiAgICAgICAgICAgIH0KICAgICAgICAgICAgZWxlbWVudCAiZGF0YWJhc2UiIHsKICAgICAgICAgICAgICAgIGJhY2tncm91bmQgIzg3Q0VFQgogICAgICAgICAgICAgICAgc2hhcGUgQ3lsaW5kZXIKICAgICAgICAgICAgfQogICAgICAgICAgICBlbGVtZW50ICJleHRlcm5hbCIgewogICAgICAgICAgICAgICAgYmFja2dyb3VuZCAjZDNkM2QzCiAgICAgICAgICAgICAgICBzaGFwZSBSb3VuZGVkQm94CiAgICAgICAgICAgIH0KCiAgICAgICAgfSAvLyBFbmQgRWxlbWVudCBTdHlsZXMKICAgIH0gLy8gRW5kIHZpZXdzCgp9IC8vIEVuZCBXb3Jrc3BhY2UKCiAK"
+  },
+  "views" : {
+    "componentViews" : [ {
+      "automaticLayout" : {
+        "applied" : false,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "LeftRight",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "containerId" : "8",
+      "elements" : [ {
+        "id" : "9",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "10",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "11",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "12",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "13",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "19",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "externalContainerBoundariesVisible" : false,
+      "key" : "ProductDevelopmentServer",
+      "order" : 4,
+      "relationships" : [ {
+        "id" : "14"
+      }, {
+        "id" : "15"
+      }, {
+        "id" : "16"
+      }, {
+        "id" : "17"
+      }, {
+        "id" : "41"
+      } ]
+    } ],
+    "configuration" : {
+      "branding" : { },
+      "lastSavedView" : "NCCFProcessing",
+      "metadataSymbols" : "SquareBrackets",
+      "styles" : {
+        "elements" : [ {
+          "shape" : "Robot",
+          "tag" : "User"
+        }, {
+          "background" : "#55d6f8",
+          "shape" : "Robot",
+          "tag" : "hfrSite"
+        }, {
+          "background" : "#1e2d78",
+          "color" : "#ffffff",
+          "shape" : "RoundedBox",
+          "tag" : "HFRNetSS"
+        }, {
+          "background" : "#87ceeb",
+          "shape" : "RoundedBox",
+          "tag" : "internal"
+        }, {
+          "background" : "#87ceeb",
+          "shape" : "WebBrowser",
+          "tag" : "website"
+        }, {
+          "background" : "#87ceeb",
+          "shape" : "Cylinder",
+          "tag" : "database"
+        }, {
+          "background" : "#d3d3d3",
+          "shape" : "RoundedBox",
+          "tag" : "external"
+        } ]
+      },
+      "terminology" : { }
+    },
+    "containerViews" : [ {
+      "automaticLayout" : {
+        "applied" : false,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "LeftRight",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "elements" : [ {
+        "id" : "1",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "5",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "7",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "8",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "18",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "19",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "29",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "externalSoftwareSystemBoundariesVisible" : false,
+      "key" : "HFRNetContainerView",
+      "order" : 3,
+      "relationships" : [ {
+        "id" : "33"
+      }, {
+        "id" : "35"
+      }, {
+        "id" : "36"
+      }, {
+        "id" : "37"
+      }, {
+        "id" : "39"
+      }, {
+        "id" : "42"
+      }, {
+        "id" : "45"
+      } ],
+      "softwareSystemId" : "4"
+    } ],
+    "deploymentViews" : [ {
+      "automaticLayout" : {
+        "applied" : true,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "LeftRight",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "dimensions" : {
+        "height" : 1411,
+        "width" : 3140
+      },
+      "elements" : [ {
+        "id" : "53",
+        "x" : 175,
+        "y" : 175
+      }, {
+        "id" : "54",
+        "x" : 970,
+        "y" : 219
+      }, {
+        "id" : "55",
+        "x" : 1720,
+        "y" : 819
+      }, {
+        "id" : "57",
+        "x" : 1720,
+        "y" : 219
+      }, {
+        "id" : "59",
+        "x" : 2470,
+        "y" : 819
+      }, {
+        "id" : "61",
+        "x" : 175,
+        "y" : 175
+      }, {
+        "id" : "62",
+        "x" : 220,
+        "y" : 519
+      } ],
+      "environment" : "NCCF",
+      "key" : "NCCFProcessing",
+      "order" : 5,
+      "relationships" : [ {
+        "id" : "56"
+      }, {
+        "id" : "58"
+      }, {
+        "id" : "60"
+      }, {
+        "id" : "63"
+      }, {
+        "id" : "64"
+      } ],
+      "softwareSystemId" : "4"
+    }, {
+      "automaticLayout" : {
+        "applied" : false,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "LeftRight",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "elements" : [ {
+        "id" : "65",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "66",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "environment" : "NDBC",
+      "generatedKey" : true,
+      "key" : "Deployment-001",
+      "order" : 6,
+      "softwareSystemId" : "4"
+    } ],
+    "systemContextViews" : [ {
+      "automaticLayout" : {
+        "applied" : false,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "LeftRight",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "elements" : [ {
+        "id" : "1",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "2",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "4",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "19",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "29",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "enterpriseBoundaryVisible" : true,
+      "key" : "HFRNetSystemContext",
+      "order" : 1,
+      "relationships" : [ {
+        "id" : "30"
+      }, {
+        "id" : "31"
+      }, {
+        "id" : "34"
+      }, {
+        "id" : "40"
+      }, {
+        "id" : "46"
+      } ],
+      "softwareSystemId" : "4"
+    } ],
+    "systemLandscapeViews" : [ {
+      "automaticLayout" : {
+        "applied" : false,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "LeftRight",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "description" : "HFRNet System Landscape",
+      "elements" : [ {
+        "id" : "1",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "2",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "3",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "4",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "19",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "20",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "25",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "26",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "27",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "28",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "29",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "enterpriseBoundaryVisible" : true,
+      "key" : "hfrnetSSLandscape",
+      "order" : 2,
+      "relationships" : [ {
+        "id" : "30"
+      }, {
+        "id" : "31"
+      }, {
+        "id" : "32"
+      }, {
+        "id" : "34"
+      }, {
+        "id" : "40"
+      }, {
+        "id" : "44"
+      }, {
+        "id" : "46"
+      }, {
+        "id" : "47"
+      }, {
+        "id" : "48"
+      }, {
+        "id" : "49"
+      }, {
+        "id" : "51"
+      }, {
+        "id" : "52"
+      } ]
+    } ]
+  }
+}

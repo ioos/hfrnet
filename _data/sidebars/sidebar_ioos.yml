@@ -19,14 +19,14 @@ entries:
       output: web
 
 # Top-level menu item #1
-    - title: Homepage Header 1
+    - title: HFRNet v1.0
 
 # A link to the 1st rendered document; consists of '/'+'markdown-document-name'+'.html'[+'#'+'any-header-or-other-anchor-on-the-page'
-      url: /index.html#header-1
+      url: /hfrnetv1p0.html
       output: web
 
-    - title: Homepage Header 2
-      url: /index.html#header-2
+    - title: HFRNet v2.0
+      url: /hfrnetv2p0.html
       output: web
 
       subfolders:

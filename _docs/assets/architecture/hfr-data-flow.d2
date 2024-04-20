@@ -82,7 +82,7 @@ ndbc.ingest -> nccf.egress: Pull from S3 or PDA ??? {
   }
 }
 
-rps: RPS Hosted {
+partner: Partner Hosted {
   ingest: "Ingest \n [Lambda / S3]"
   web: "hfradar.ioos.us website"
   erddap: "Radials ERDDAP"
@@ -99,17 +99,17 @@ rps: RPS Hosted {
 
 
 # What about the configuration of sites from web site
-rps.ingest -> agg.dir: "Radials" {
+partner.ingest -> agg.dir: "Radials" {
   style: {
     stroke: red
   }
 }
-rps.web <-> agg.rtdb: "Query/Update site configuration" {
+partner.web <-> agg.rtdb: "Query/Update site configuration" {
   style: {
     stroke: red
   }
 }
-rps.ingest -> ndbc.tds: "RTV/Waves?" {
+partner.ingest -> ndbc.tds: "RTV/Waves?" {
   style: {
     stroke: red
   }
@@ -127,10 +127,10 @@ users: "Users or Dissemination Systems" {
 }
 
 ndbc.tds <- users.data_tanks: "wget"
-ndbc.ftp -> users.nwstg: "Grib via ftpsin 42"
+ndbc.ftp -> users.nwstg: "Push grib files via ftpsin 421"
 
-users.developers -> rps.data_lake: XArray, XPublish
-users.model -> rps.erddap: "netCDF"
+users.developers -> partner.data_lake: XArray, XPublish
+users.model -> partner.erddap: "netCDF"
 
 ndbc.archiver -> users.ncei: Push monthly archive {
   style: {

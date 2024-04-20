@@ -123,7 +123,7 @@ defaults:
 sidebars:
 - sidebar_ioos
 
-description: "A Jekyll-based documentation theme for data management documentation, software and other technical documentation needs.  This is a skeleton repository for IOOS technical documentation projects to use as a starting point to develop new pages for the https://ioos.github.io site."
+description: "Technical documentation for the IOOS HFRNet System"
 # the description is used in the feed.xml file
 
 #disqus_shortname: idrbwjekyll

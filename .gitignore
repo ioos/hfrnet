@@ -7,3 +7,4 @@ _pdf
 .DS_Store
 temp
 Gemfile.lock
+_docs/assets/architecture/.structurizr

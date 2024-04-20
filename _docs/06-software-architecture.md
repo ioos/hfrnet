@@ -1,0 +1,52 @@
+---
+# Feel free to add content and custom Front Matter to this file.
+# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+
+title: Software Architecture
+layout: home
+---
+
+The software architecture section is your “big picture” view and allows you to present the structure of the software. Traditional software architecture documents typically refer to this as a “conceptual view” or “logical view”, and there is often confusion about whether such views should refer to implementation details such as technology choices.
+
+## Intent
+
+The purpose of this section is to summarise the software architecture of your software system so that the following questions can be answered:
+
+- What does the “big picture” look like?
+- Is there are clear structure?
+- Is it clear how the system works from the “30,000 foot view”?
+- Does it show the major containers and technology choices?
+- Does it show the major components and their interactions?
+- Whatarethekeyinternalinterfaces?(e.g.awebservicebetweenyourwebandbusiness
+tiers)
+
+## Structure
+
+I use the container and component diagrams as the main focus for this section, accompanied by a short narrative explaining what the diagram is showing plus a summary of each container/component.
+Sometimes UML sequence or collaboration diagrams showing component interactions can be a useful way to illustrate how the software satisfies the major use cases/user stories/etc. Only do this if it adds value though and resist the temptation to describe how every use case/user story works!
+
+## Motivation
+
+The motivation for writing this section is that it provides the maps that people can use to get an overview of the software and help developers navigate the codebase.
+
+## Audience
+
+The audience for this section is predominantly the technical people in the software develop- ment team.
+
+## Required
+
+Yes, all software guidebooks should include a software architecture section because it’s essential that the overall software structure is well understood by everybody on the development team.
+
+## Ingesting data from HFR sites into the HFRNet System
+
+Two options.  Parallel development
+
+### Option 1: Use existing portals 
+
+See item 0001 in the [Decision Log](./13-decision-log) for more details.
+
+![Schematic of existing portal data flow](./portals.svg)
+
+### Option 2: Ingest from sites directly into the cloud
+
+![Schematic showing direct ingest into AWS S3 buckets](./cloud.svg)
