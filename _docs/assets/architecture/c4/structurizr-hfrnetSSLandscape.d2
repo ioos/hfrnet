@@ -1,0 +1,270 @@
+title: |`md
+  # System Landscape
+`| {
+  near: top-center
+}
+direction: right
+container_1: {
+  label: "HFR Site\n[Software System]"
+  shape: rectangle
+  tooltip: "An HFR Station where a SeaSonde/WERA/LERA unit is installed and operating."
+  style: {
+    fill: "#dddddd"
+    font-color: "#000000"
+    font-size: 24
+    multiple: false
+    opacity: 1.0
+    stroke: "#9a9a9a"
+  }
+}
+container_19: {
+  label: "System status website\n[Software System]"
+  shape: rectangle
+  tooltip: "Services that provides visualizations of products and metrics; manages site configuration."
+  style: {
+    fill: "#87ceeb"
+    font-color: "#000000"
+    font-size: 24
+    multiple: false
+    opacity: 1.0
+    stroke: "#5e90a4"
+  }
+}
+container_2: {
+  label: "HFR User\n[Person]"
+  shape: person
+  tooltip: "A person (or system) that uses HFR derived products."
+  style: {
+    fill: "#dddddd"
+    font-color: "#000000"
+    font-size: 24
+    multiple: false
+    opacity: 1.0
+    stroke: "#9a9a9a"
+  }
+}
+container_20: {
+  label: "Operational Dissemination\n[Software System]"
+  shape: rectangle
+  tooltip: "Retrieve files from Egress, reformat, and distribute."
+  style: {
+    fill: "#d3d3d3"
+    font-color: "#000000"
+    font-size: 24
+    multiple: false
+    opacity: 1.0
+    stroke: "#939393"
+  }
+}
+container_25: {
+  label: "NWSTG\n[Software System]"
+  shape: rectangle
+  tooltip: "NWS managed gateway to the WMO GTS for international dissemination."
+  style: {
+    fill: "#d3d3d3"
+    font-color: "#000000"
+    font-size: 24
+    multiple: false
+    opacity: 1.0
+    stroke: "#939393"
+  }
+}
+container_26: {
+  label: "NCEP Data Tank\n[Software System]"
+  shape: rectangle
+  tooltip: "Datastore (/dcom) available to the NOAA Operational compute system WCOSS2."
+  style: {
+    fill: "#d3d3d3"
+    font-color: "#000000"
+    font-size: 24
+    multiple: false
+    opacity: 1.0
+    stroke: "#939393"
+  }
+}
+container_27: {
+  label: "NCEI Archive\n[Software System]"
+  shape: rectangle
+  tooltip: "NCEI Archive for public dissemination."
+  style: {
+    fill: "#d3d3d3"
+    font-color: "#000000"
+    font-size: 24
+    multiple: false
+    opacity: 1.0
+    stroke: "#939393"
+  }
+}
+container_28: {
+  label: "ERDDAP\n[Software System]"
+  shape: rectangle
+  tooltip: "ERRDAP server providing access to radial data files."
+  style: {
+    fill: "#d3d3d3"
+    font-color: "#000000"
+    font-size: 24
+    multiple: false
+    opacity: 1.0
+    stroke: "#939393"
+  }
+}
+container_29: {
+  label: "PDA\n[Software System]"
+  shape: rectangle
+  tooltip: "NESDIS Product Dissemination A???"
+  style: {
+    fill: "#d3d3d3"
+    font-color: "#000000"
+    font-size: 24
+    multiple: false
+    opacity: 1.0
+    stroke: "#939393"
+  }
+}
+container_3: {
+  label: "Site Operator\n[Person]"
+  shape: person
+  tooltip: "A person responsible for configuring and maintaining a site."
+  style: {
+    fill: "#dddddd"
+    font-color: "#000000"
+    font-size: 24
+    multiple: false
+    opacity: 1.0
+    stroke: "#9a9a9a"
+  }
+}
+container_4: {
+  label: "HFRNet\n[Software System]"
+  shape: rectangle
+  tooltip: "Aggregate raw data and process into useful outputs for dissemination."
+  style: {
+    fill: "#1e2d78"
+    font-color: "#ffffff"
+    font-size: 24
+    multiple: false
+    opacity: 1.0
+    stroke: "#151f54"
+  }
+}
+
+container_1 -> container_4: {
+  label: "Provides data."
+  style: {
+    font-size: 24
+    opacity: 1.0
+    stroke: "#707070"
+    stroke-dash: 5
+    stroke-width: 2
+  }
+}
+container_4 -> container_2: {
+  label: "Uses products."
+  style: {
+    font-size: 24
+    opacity: 1.0
+    stroke: "#707070"
+    stroke-dash: 5
+    stroke-width: 2
+  }
+}
+container_3 -> container_19: {
+  label: "Configure site"
+  style: {
+    font-size: 24
+    opacity: 1.0
+    stroke: "#707070"
+    stroke-dash: 5
+    stroke-width: 2
+  }
+}
+container_4 -> container_1: {
+  label: "Aggregates radials/configuration"
+  style: {
+    font-size: 24
+    opacity: 1.0
+    stroke: "#707070"
+    stroke-dash: 5
+    stroke-width: 2
+  }
+}
+container_19 -> container_4: {
+  label: "Query/update site configuration."
+  style: {
+    font-size: 24
+    opacity: 1.0
+    stroke: "#707070"
+    stroke-dash: 5
+    stroke-width: 2
+  }
+}
+container_19 -> container_20: {
+  label: "Access OGC/WMS API access to visualize maps."
+  style: {
+    font-size: 24
+    opacity: 1.0
+    stroke: "#707070"
+    stroke-dash: 5
+    stroke-width: 2
+  }
+}
+container_4 -> container_29: {
+  label: "Push products to"
+  style: {
+    font-size: 24
+    opacity: 1.0
+    stroke: "#707070"
+    stroke-dash: 5
+    stroke-width: 2
+  }
+}
+container_20 -> container_29: {
+  label: "Retrieve files from PDA"
+  style: {
+    font-size: 24
+    opacity: 1.0
+    stroke: "#707070"
+    stroke-dash: 5
+    stroke-width: 2
+  }
+}
+container_20 -> container_27: {
+  label: "Publish monthly archive packages."
+  style: {
+    font-size: 24
+    opacity: 1.0
+    stroke: "#707070"
+    stroke-dash: 5
+    stroke-width: 2
+  }
+}
+container_20 -> container_25: {
+  label: "Provide [type?] files to NWSTG via Line ftpsin 421.\n[FTP]"
+  style: {
+    font-size: 24
+    opacity: 1.0
+    stroke: "#707070"
+    stroke-dash: 5
+    stroke-width: 2
+  }
+}
+container_26 -> container_20: {
+  label: "Access OPeNDAP to populate data tanks via wget.\n[Shell/wget]"
+  style: {
+    font-size: 24
+    opacity: 1.0
+    stroke: "#707070"
+    stroke-dash: 5
+    stroke-width: 2
+  }
+}
+container_28 -> container_20: {
+  label: "Retrieve radials\n[FTP]"
+  style: {
+    font-size: 24
+    opacity: 1.0
+    stroke: "#707070"
+    stroke-dash: 5
+    stroke-width: 2
+  }
+}

@@ -1,0 +1,140 @@
+title: |`md
+  # HFRNet - Deployment - NCCF
+`| {
+  near: top-center
+}
+direction: right
+container_53: {
+  label: "NCCF Processing\n[Deployment Node]"
+  shape: rectangle
+  style: {
+    fill: "#ffffff"
+    font-color: "#000000"
+    font-size: 24
+    multiple: false
+    opacity: 1.0
+    stroke: "#888888"
+  }
+}
+container_53.container_54: {
+  label: "Product Dev"
+  shape: rectangle
+  style: {
+    fill: "#87ceeb"
+    font-color: "#000000"
+    font-size: 24
+    multiple: false
+    opacity: 1.0
+    stroke: "#5e90a4"
+  }
+}
+container_53.container_55: {
+  label: "Site Aggregator"
+  shape: rectangle
+  style: {
+    fill: "#87ceeb"
+    font-color: "#000000"
+    font-size: 24
+    multiple: false
+    opacity: 1.0
+    stroke: "#5e90a4"
+  }
+}
+container_53.container_57: {
+  label: "Product Database"
+  shape: cylinder
+  style: {
+    fill: "#87ceeb"
+    font-color: "#000000"
+    font-size: 24
+    multiple: false
+    opacity: 1.0
+    stroke: "#5e90a4"
+  }
+}
+container_53.container_59: {
+  label: "Site Aggregator Database"
+  shape: cylinder
+  style: {
+    fill: "#87ceeb"
+    font-color: "#000000"
+    font-size: 24
+    multiple: false
+    opacity: 1.0
+    stroke: "#5e90a4"
+  }
+}
+container_61: {
+  label: "Partner Web Hosting\n[Deployment Node]"
+  shape: rectangle
+  style: {
+    fill: "#ffffff"
+    font-color: "#000000"
+    font-size: 24
+    multiple: false
+    opacity: 1.0
+    stroke: "#888888"
+  }
+}
+container_61.container_62: {
+  label: "System status website"
+  shape: rectangle
+  style: {
+    fill: "#87ceeb"
+    font-color: "#000000"
+    font-size: 24
+    multiple: false
+    opacity: 1.0
+    stroke: "#5e90a4"
+  }
+}
+container_53.container_54 -> container_53.container_55: {
+  label: "Pulls data from"
+  style: {
+    font-size: 24
+    opacity: 1.0
+    stroke: "#707070"
+    stroke-dash: 5
+    stroke-width: 2
+  }
+}
+container_53.container_54 -> container_53.container_57: {
+  label: "Query/update configuration and metrics.\n[TCP/SQL]"
+  style: {
+    font-size: 24
+    opacity: 1.0
+    stroke: "#707070"
+    stroke-dash: 5
+    stroke-width: 2
+  }
+}
+container_53.container_55 -> container_53.container_59: {
+  label: "Query/update site configuration."
+  style: {
+    font-size: 24
+    opacity: 1.0
+    stroke: "#707070"
+    stroke-dash: 5
+    stroke-width: 2
+  }
+}
+container_61.container_62 -> container_53.container_54: {
+  label: "Pull metrics for visualization."
+  style: {
+    font-size: 24
+    opacity: 1.0
+    stroke: "#707070"
+    stroke-dash: 5
+    stroke-width: 2
+  }
+}
+container_61.container_62 -> container_53.container_55: {
+  label: "Query/update site configuration."
+  style: {
+    font-size: 24
+    opacity: 1.0
+    stroke: "#707070"
+    stroke-dash: 5
+    stroke-width: 2
+  }
+}

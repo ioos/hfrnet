@@ -1,0 +1,148 @@
+title: |`md
+  # HFRNet - Product Dev - Components
+`| {
+  near: top-center
+}
+direction: right
+container_19: {
+  label: "System status website\n[Software System]"
+  shape: rectangle
+  tooltip: "Services that provides visualizations of products and metrics; manages site configuration."
+  style: {
+    fill: "#87ceeb"
+    font-color: "#000000"
+    font-size: 24
+    multiple: false
+    opacity: 1.0
+    stroke: "#5e90a4"
+  }
+}
+
+container_8: {
+  label: "Product Dev\n[Container]"
+  shape: rectangle
+  tooltip: "Collect data from Site Aggregators and process raw data into products."
+  style: {
+    fill: "#87ceeb"
+    font-color: "#000000"
+    font-size: 24
+    multiple: false
+    opacity: 1.0
+    stroke: "#5e90a4"
+  }
+}
+container_8.container_10: {
+  label: "Product Logic\n[Component: Python/Shell]"
+  shape: rectangle
+  tooltip: "Scripts to orchestrate computations and data dissemination."
+  style: {
+    fill: "#87ceeb"
+    font-color: "#000000"
+    font-size: 24
+    multiple: false
+    opacity: 1.0
+    stroke: "#5e90a4"
+  }
+}
+container_8.container_11: {
+  label: "Waves\n[Component: Matlab to Python]"
+  shape: rectangle
+  tooltip: "Matlab toolbox to calculate wave parameters from radial data."
+  style: {
+    fill: "#87ceeb"
+    font-color: "#000000"
+    font-size: 24
+    multiple: false
+    opacity: 1.0
+    stroke: "#5e90a4"
+  }
+}
+container_8.container_12: {
+  label: "RTV\n[Component: Matlab to Python]"
+  shape: rectangle
+  tooltip: "Matlab toolbox to calculate Total Vectors from radial data."
+  style: {
+    fill: "#87ceeb"
+    font-color: "#000000"
+    font-size: 24
+    multiple: false
+    opacity: 1.0
+    stroke: "#5e90a4"
+  }
+}
+container_8.container_13: {
+  label: "Prod Monitor\n[Component: Python/Shell]"
+  shape: rectangle
+  tooltip: "Monitor and report system health metrics (e.g. 80/80)."
+  style: {
+    fill: "#87ceeb"
+    font-color: "#000000"
+    font-size: 24
+    multiple: false
+    opacity: 1.0
+    stroke: "#5e90a4"
+  }
+}
+container_8.container_9: {
+  label: "Egress\n[Component: FTP or S3]"
+  shape: rectangle
+  tooltip: "Method to egress product files from production."
+  style: {
+    fill: "#87ceeb"
+    font-color: "#000000"
+    font-size: 24
+    multiple: false
+    opacity: 1.0
+    stroke: "#5e90a4"
+  }
+}
+container_8.container_10 -> container_8.container_12: {
+  label: "Orchestrate RTV calculation and I/O"
+  style: {
+    font-size: 24
+    opacity: 1.0
+    stroke: "#707070"
+    stroke-dash: 5
+    stroke-width: 2
+  }
+}
+container_8.container_10 -> container_8.container_11: {
+  label: "Orchestrate waves calculation and I/O"
+  style: {
+    font-size: 24
+    opacity: 1.0
+    stroke: "#707070"
+    stroke-dash: 5
+    stroke-width: 2
+  }
+}
+container_8.container_10 -> container_8.container_13: {
+  label: "Calculate metrics"
+  style: {
+    font-size: 24
+    opacity: 1.0
+    stroke: "#707070"
+    stroke-dash: 5
+    stroke-width: 2
+  }
+}
+container_8.container_10 -> container_8.container_9: {
+  label: "Stages files for Egress"
+  style: {
+    font-size: 24
+    opacity: 1.0
+    stroke: "#707070"
+    stroke-dash: 5
+    stroke-width: 2
+  }
+}
+container_19 -> container_8.container_13: {
+  label: "Pull metrics for visualization."
+  style: {
+    font-size: 24
+    opacity: 1.0
+    stroke: "#707070"
+    stroke-dash: 5
+    stroke-width: 2
+  }
+}
