@@ -1,0 +1,100 @@
+-- MySQL dump 10.13  Distrib 8.0.31, for macos12 (x86_64)
+--
+-- Host: localhost    Database: acquisition
+-- ------------------------------------------------------
+-- Server version	8.0.33
+drop database acquisition;
+create database acquisition;
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `portal`
+--
+
+use acquisition;
+DROP TABLE IF EXISTS `portal`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+use acquisition;
+CREATE TABLE `portal` (
+  `name` char(25) NOT NULL,
+  `ip_address` char(50) NOT NULL,
+  `node_rsync_dir` varchar(100) NOT NULL DEFAULT '/opt/hfrnet/hfrnet-acquisition/radials/node_rsync/',
+  `wave_node_rsync_dir` varchar(100) DEFAULT '/opt/hfrnet/hfrnet-acquisition/waves/node_rsync/',
+  `sshkey_node` varchar(20) NOT NULL,
+  `disabled` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`name`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `site`
+--
+
+use acquisition;
+DROP TABLE IF EXISTS `site`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+use acquisition;
+CREATE TABLE `site` (
+  `site_id` int NOT NULL AUTO_INCREMENT,
+  `network` char(20) NOT NULL,
+  `site` char(25) NOT NULL,
+  `sshkey_host` varchar(20) NOT NULL,
+  `portal` char(25) NOT NULL,
+  `src_dir` varchar(200) NOT NULL,
+  `patterntype` enum('i','m') NOT NULL DEFAULT 'm',
+  `disabled` tinyint(1) NOT NULL DEFAULT '0',
+  `file_pattern` varchar(45) DEFAULT '*.ruv',
+  `state` int NOT NULL DEFAULT '0',
+  PRIMARY KEY (`site_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=403 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `site_wave`
+--
+
+use acquisition;
+DROP TABLE IF EXISTS `site_wave`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+use acquisition;
+CREATE TABLE `site_wave` (
+  `site_id` int NOT NULL AUTO_INCREMENT,
+  `network` char(20) NOT NULL,
+  `site` char(25) NOT NULL,
+  `sshkey_host` varchar(20) NOT NULL,
+  `portal` char(25) NOT NULL,
+  `src_dir` varchar(200) NOT NULL,
+  `disabled` tinyint(1) NOT NULL DEFAULT '0',
+  `file_pattern` varchar(45) DEFAULT '*.wls',
+  `state` int NOT NULL DEFAULT '0',
+  PRIMARY KEY (`site_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping routines for database 'acquisition'
+--
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2024-04-18  8:19:44
