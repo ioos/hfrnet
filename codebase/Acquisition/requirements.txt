@@ -1,0 +1,6 @@
+dictdiffer==0.7.1
+mysql-connector==2.1.6
+mysql-connector-python==8.0.11
+protobuf==3.5.2.post1
+PyMySQL==0.8.1
+six==1.11.0
