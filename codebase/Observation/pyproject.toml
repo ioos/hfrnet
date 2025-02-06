@@ -1,8 +1,0 @@
-[build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
-[project]
-description = ""
-version = "0.1.0"
-name = "Observation"
-requires-python = ">=3.10.14"
