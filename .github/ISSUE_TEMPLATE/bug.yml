@@ -1,5 +1,5 @@
 name: Bug Report
-description: Help us resolve a bug
+description: Help us resolve a bug in IOOS HFRNet
 title: "Bug Report: "
 labels: ["bug"]
 projects: ["ioos/22"]
