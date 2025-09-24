@@ -1,0 +1,27 @@
+name: User Request
+description: Submit a user request to IOOS HFRNer
+title: "User Request: "
+labels: ["User Request"]
+projects: ["ioos/22"]
+assignees:
+  - 
+body:
+  - type: markdown
+    attributes:
+      value: To submit a user request to the IOOS Marine Life Data Network, please fill out the issue template below.
+  - type: input
+    id: who
+    attributes:
+      label: Who is requesting this?
+  - type: textarea
+    id: what
+    attributes:
+      label: What is being requested?
+  - type: textarea
+    id: why
+    attributes:
+      label: How would this request improve your current workflow?
+  - type: input
+    id: contact
+    attributes:
+      label: How can we get in contact with you to follow up on this request?
