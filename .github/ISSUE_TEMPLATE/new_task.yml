@@ -6,7 +6,7 @@ projects: ["ioos/22"]
 body:
   - type: markdown
     attributes:
-      value: To start the discussion and planning of a new task in the IOOS Glider Data Assembly Center, please fill out the questions below.
+      value: To start the discussion and planning of a new task in IOOS HFRNet, please fill out the questions below.
   - type: input
     id: who
     attributes:
