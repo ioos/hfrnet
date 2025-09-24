@@ -1,5 +1,5 @@
 name: User Request
-description: Submit a user request to IOOS HFRNer
+description: Submit a user request to IOOS HFRNet
 title: "User Request: "
 labels: ["User Request"]
 projects: ["ioos/22"]
@@ -8,7 +8,7 @@ assignees:
 body:
   - type: markdown
     attributes:
-      value: To submit a user request to the IOOS Marine Life Data Network, please fill out the issue template below.
+      value: To submit a user request to IOOS HFRNet, please fill out the issue template below.
   - type: input
     id: who
     attributes:
